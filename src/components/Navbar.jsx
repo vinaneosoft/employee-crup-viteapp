@@ -6,7 +6,7 @@ function Navbar(){
 
   //logic 
     return(
-        <nav class="mynav">
+        <nav>
           <h4>{heading}</h4> 
         </nav>
 
