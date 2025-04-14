@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 function MyHeader(){
     return(
        <header>
-         <h1>NEOSOFT EMPLOYEE MANAGEMENT</h1>
+         <h3>EMPLOYEE CRUD</h3>
          <Navbar></Navbar>
        </header>
     );

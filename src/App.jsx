@@ -1,5 +1,6 @@
 
 import './App.css'
+import MyFooter from './components/MyFooter'
 import MyHeader from './components/MyHeader'
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -8,10 +9,9 @@ import MyHeader from './components/MyHeader'
 function App() {
   return (
    <>
+    <h2>EMPLOYEE MANAGEMENT</h2>
      <MyHeader></MyHeader>
-      <p>this is my first
-        <i>react project</i> 
-      </p> 
+      <MyFooter></MyFooter>
    </>
   )
 }

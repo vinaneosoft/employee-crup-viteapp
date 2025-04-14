@@ -1,8 +1,11 @@
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Navbar(){
+  //logic 
     return(
         <nav>
-          <h2>navbar</h2>
+          <h4>navbar</h4>
         </nav>
 
     );
