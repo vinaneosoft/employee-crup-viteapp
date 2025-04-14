@@ -7,9 +7,11 @@ import MyHeader from './components/MyHeader'
  /* component : first letter captical 
  normal jsx elements : all letter small (similar like html) */
 function App() {
+  const mainheading="EMPLOYEE MANAGEMENT"; // data
+  const jsxelement=<h1>{mainheading}</h1>
   return (
    <>
-    <h2>EMPLOYEE MANAGEMENT</h2>
+      {jsxelement}
      <MyHeader></MyHeader>
       <MyFooter></MyFooter>
    </>
