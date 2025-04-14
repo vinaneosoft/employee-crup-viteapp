@@ -1,6 +1,6 @@
 
 import './App.css'
-import MyHeader from './components/Header'
+import MyHeader from './components/MyHeader'
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
  /* component : first letter captical 
