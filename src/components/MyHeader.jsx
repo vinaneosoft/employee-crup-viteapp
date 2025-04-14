@@ -1,6 +1,6 @@
 
 import Navbar from "./Navbar";
-
+/* jsx attributes in camelcase */
 function MyHeader(){
     return(
        <header className="top">
