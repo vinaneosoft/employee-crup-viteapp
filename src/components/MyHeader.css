@@ -1,0 +1,12 @@
+.top{
+    border: 4px double darkblue;
+    background: darkgreen;
+}
+
+.subheading{
+    text-transform: uppercase;
+    color: red;
+}
+#neo{
+    color: darkkhaki;
+}

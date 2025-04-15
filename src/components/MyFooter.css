@@ -1,0 +1,13 @@
+.bottom{
+
+    background: lightgreen;
+    border: 4px double lightskyblue;
+}
+
+.subheading{
+    text-transform: lowercase;
+    color: white;
+}
+.company{
+    color: darkmagenta;
+}

@@ -1,7 +1,8 @@
-
+/* if we have same classes in different css of components then
+recent imported components' css will be considered */
 import './App.css'
-import MyFooter from './components/MyFooter'
 import MyHeader from './components/MyHeader'
+import MyFooter from './components/MyFooter'
 import Learning from './components/Learning';
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -12,10 +13,10 @@ function App() {
   const jsxelement=<h1>{mainheading}</h1>
   return (
    <>
-      {jsxelement}
-     <MyHeader></MyHeader>
-     <Learning></Learning>
-     <MyFooter></MyFooter>
+    {jsxelement}
+    <MyHeader></MyHeader>
+    <Learning></Learning>
+    <MyFooter></MyFooter>
    </>
   )
 }

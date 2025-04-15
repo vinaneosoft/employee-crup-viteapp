@@ -3,7 +3,7 @@ function ReactEmployees(){
     const olType="a";
     const reactEmps=['Suchita','Kiran','karan',"Pooja"] //string[]
     const liElements=reactEmps
-         .filter(emp=>emp.toUpperCase().startsWith("K")) 
+         /* .filter(emp=>emp.toUpperCase().startsWith("K")) */ 
         .map((emp,idx)=><li key={idx}>{emp}</li>); //React.JSX.Element[]
     return (
        <ol type={olType}> 
