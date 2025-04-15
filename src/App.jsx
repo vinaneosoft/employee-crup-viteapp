@@ -2,6 +2,7 @@
 import './App.css'
 import MyFooter from './components/MyFooter'
 import MyHeader from './components/MyHeader'
+import Learning from './components/Learning';
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
  /* component : first letter captical 
@@ -13,6 +14,7 @@ function App() {
    <>
       {jsxelement}
      <MyHeader></MyHeader>
+     <Learning></Learning>
      <MyFooter></MyFooter>
    </>
   )
