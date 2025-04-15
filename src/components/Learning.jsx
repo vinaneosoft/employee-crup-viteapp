@@ -1,10 +1,13 @@
 import React from "react";
+import ReactEmployees from "./ReactEmployees";
+import AngularEmployees from "./AngularEmployees";
 
 
 
 function Learning(){
     let department="JS";
     let married=true;
+    let training="angular";
     return(
       <>
            <div>
@@ -20,6 +23,14 @@ function Learning(){
             <p>
                 {married && <mark>Employee is married</mark>}
             </p>
+           </div>
+           <div>
+            <h5> Employee List for {training.toUpperCase()} training </h5>
+                {
+                    training.toUpperCase()=="REACT" 
+                    ? <ReactEmployees></ReactEmployees>
+                    : <AngularEmployees></AngularEmployees>
+                }
            </div>
       </>
     );
