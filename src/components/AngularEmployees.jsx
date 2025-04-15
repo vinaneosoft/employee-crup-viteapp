@@ -3,7 +3,9 @@
 function AngularEmployees(){
     const angularEmps=['Mohan','Hairsh','Poonam'];
     return (
-        <p>{angularEmps}</p>
+       <ol>
+        {angularEmps.map((emp,i)=><li key={i}>{emp}</li>)}
+       </ol>
     );
 }
 

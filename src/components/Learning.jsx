@@ -7,7 +7,7 @@ import AngularEmployees from "./AngularEmployees";
 function Learning(){
     let department="JS";
     let married=true;
-    let training="react";
+    let training="angular";
     return(
       <>
            <div>
