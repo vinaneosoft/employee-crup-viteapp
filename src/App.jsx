@@ -19,3 +19,8 @@ function App() {
 }
 
 export default App
+
+
+const books=[{bookId:111, bookName:'React basics'},
+  {bookId:112, bookName:'Angular Basics'}];
+let [,{bookName:secondBookName}]=books
