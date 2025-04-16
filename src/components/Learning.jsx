@@ -55,15 +55,27 @@ function Learning(){
             <h4 >Event Handling</h4>
             <h5>Calling non parameterized function</h5>
             <p>
-                <button className="btn btn-primary" onClick={handleClickEvent}>CLICK</button>
+                <button className="btn btn-primary" 
+                onClick={handleClickEvent}>CLICK</button>
             </p>
             <h5>Calling parameterized function (implicit parameter - event object)</h5>
             <p>
-                <button className="btn btn-primary" onClick={handleClickEvent2}>CLICK 2</button>
+                <button className="btn btn-primary" 
+                onClick={handleClickEvent2}>CLICK 2</button>
             </p>
             <h5>Calling parameterized function (explicit parameter)</h5>
             <p>
-                <button className="btn btn-primary" onClick={()=>accessName("veena")}>SEND NAME</button>
+                <button className="btn btn-primary" 
+                onClick={()=>accessName("veena") }>SEND NAME</button>
+            </p>
+            <p>
+                <h5>Inline javascript</h5>
+                <button className="btn btn-primary" 
+                onClick={()=>{
+                    alert("inline js")
+                    console.log("hi");
+                    console.log("hello");
+                }}>CLICK-3</button>
             </p>
            </div>
       </>
@@ -74,3 +86,4 @@ export default Learning;
 /*
 <React.Fragment>   is similar to <>
 */
+
