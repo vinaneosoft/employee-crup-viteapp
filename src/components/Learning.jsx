@@ -22,7 +22,7 @@ function Learning(){
             </div>
            <div>
            <h5>Ternary Operator in JSX Expression (if then else statements)</h5>
-            <p style={paraStyle}>
+            <p style={paraStyle} >
                 {department.toUpperCase()=='DN'
                 ?<b>you are allowed to attend training</b>
                 :<i>NOT ALLOWED</i>}

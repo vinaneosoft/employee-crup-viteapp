@@ -10,7 +10,7 @@ import Learning from './components/Learning';
  normal jsx elements : all letter small (similar like html) */
 function App() {
   const mainheading="EMPLOYEE MANAGEMENT"; // data
-  const jsxelement=<h1>{mainheading}</h1>
+  const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   return (
    <>
     {jsxelement}
