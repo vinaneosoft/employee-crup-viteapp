@@ -7,7 +7,7 @@ import AngularEmployees from "./AngularEmployees";
 function Learning(){
    
 
-    let [department, changeDepartment]=useState("");
+    let [department, setDepartment]=useState("");
 
     let married=true;
     let training="react";
@@ -33,7 +33,7 @@ function Learning(){
     function checkEntry(event){
         console.log(event.target.value); // UI
        // department=event.target.value; // wrong logic in react 
-        changeDepartment(event.target.value)
+        setDepartment(event.target.value)
     }
 
     return(
@@ -110,4 +110,7 @@ export default Learning;
 take user input : deparment code onKeyUp
 department variable : changed accoroding user input
 state change 
-1. jsx element : input type=text*/
+1. jsx element : input type=text
+2. handle keyup event
+3. maintain state of department variable in useState hook
+4. call setter function of hook and change deparment value*/
