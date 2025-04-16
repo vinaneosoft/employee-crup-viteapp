@@ -16,14 +16,17 @@ function Learning(){
     function handleClickEvent(){
        alert("Button clicked.....");
     }
-    function handleClickEvent2(event){
-        console.log(event);
-        alert(event.target)
+    function handleClickEvent2(e){
+        console.log(e);
+        alert(e.target)
     }
     function accessName(name){
         alert("hello "+name);
     }
+    function getCompanyName(company, event){
+        alert(company+" "+event.target);
 
+    }
     return(
       <>
             <div>
@@ -68,14 +71,19 @@ function Learning(){
                 <button className="btn btn-primary" 
                 onClick={()=>accessName("veena") }>SEND NAME</button>
             </p>
+            <h5>Inline javascript</h5>
             <p>
-                <h5>Inline javascript</h5>
                 <button className="btn btn-primary" 
                 onClick={()=>{
                     alert("inline js")
                     console.log("hi");
                     console.log("hello");
                 }}>CLICK-3</button>
+            </p>
+            <h5>Calling parameterized function (explicit parameter, implicit parameter)</h5>
+            <p>
+                <button className="btn btn-primary" 
+                onClick={(ev)=>getCompanyName("Neosoft", ev) }>SEND NAME</button>
             </p>
            </div>
       </>
