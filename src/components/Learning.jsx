@@ -8,20 +8,18 @@ function Learning(){
     let department="JS";
     let married=true;
     let training="react";
-
     // js styling : css keys must be in camel case
     const paraStyle={
     textDecoration: "underline",
     color:'yellow'
     }
-  
     return(
       <>
             <div>
             <p style={paraStyle}>Employee CRUD operations : Create, Read, Update, Delete</p>
             </div>
            <div>
-           <h5>Ternary Operator in JSX Expression (if then else statements)</h5>
+           <h5 className="text-info bg-danger">Ternary Operator in JSX Expression (if then else statements)</h5>
             <p style={paraStyle} >
                 {department.toUpperCase()=='DN'
                 ?<b>you are allowed to attend training</b>
@@ -29,8 +27,8 @@ function Learning(){
             </p>
            </div>
            <div>
-            <h5>&& operator (if then statements)</h5>
-            <p>
+            <h5 className="text-center">&& operator (if then statements)</h5>
+            <p className="fw-bold">
                 {married && <mark>Employee is married</mark>}
             </p>
            </div>
