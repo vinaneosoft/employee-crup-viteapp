@@ -13,6 +13,13 @@ function Learning(){
     textDecoration: "underline",
     color:'yellow'
     }
+
+   
+    function handleClickEvent(){
+        alert("Button clicked.....");
+    }
+    
+
     return(
       <>
             <div>
@@ -39,6 +46,13 @@ function Learning(){
                     ? <ReactEmployees></ReactEmployees>
                     : <AngularEmployees></AngularEmployees>
                 }
+           </div>
+           <div>
+            <h4 >Event Handling</h4>
+            <h5>Calling non parameterized function</h5>
+            <p>
+                <button className="btn btn-primary" onClick={handleClickEvent}>CLICK</button>
+            </p>
            </div>
       </>
     );

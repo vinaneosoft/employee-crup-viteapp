@@ -1,6 +1,11 @@
 import Navbar from "./Navbar";
 import "./MyFooter.css";
+
+
+
 function MyFooter(){
+
+
     return(
         <footer className="bottom">
         <h3 className="subheading">footer</h3>
@@ -8,6 +13,7 @@ function MyFooter(){
         <Navbar></Navbar>
         </footer>
     );
+    
 }
 
 export default MyFooter;

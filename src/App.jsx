@@ -4,6 +4,7 @@ import './App.css'
 import MyHeader from './components/MyHeader'
 import MyFooter from './components/MyFooter'
 import Learning from './components/Learning';
+
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
  /* component : first letter captical 
@@ -11,6 +12,8 @@ import Learning from './components/Learning';
 function App() {
   const mainheading="EMPLOYEE MANAGEMENT"; // data
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
+  
+  
   return (
    <>
     {jsxelement}
@@ -20,10 +23,5 @@ function App() {
    </>
   )
 }
-
 export default App
 
-
-const books=[{bookId:111, bookName:'React basics'},
-  {bookId:112, bookName:'Angular Basics'}];
-let [,{bookName:secondBookName}]=books

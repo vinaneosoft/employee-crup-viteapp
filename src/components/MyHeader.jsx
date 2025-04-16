@@ -10,9 +10,7 @@ const subHeading="employee CRUD"
 
     return(
        <header className="top">
-         <h3 className="subheading">{subHeading}</h3>
-         <h4 id="neo" className="company">Neosoft</h4>
-       
+         <h3 className="subheading text-center">{subHeading}</h3>
          <Navbar></Navbar>
        </header>
     );
