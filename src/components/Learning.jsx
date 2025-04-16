@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactEmployees from "./ReactEmployees";
 import AngularEmployees from "./AngularEmployees";
 
 
 
 function Learning(){
-    let department="JS";
+   
+
+    let [department, changeDepartment]=useState("");
+
     let married=true;
     let training="react";
     // js styling : css keys must be in camel case
@@ -25,8 +28,14 @@ function Learning(){
     }
     function getCompanyName(company, event){
         alert(company+" "+event.target);
-
     }
+   
+    function checkEntry(event){
+        console.log(event.target.value); // UI
+       // department=event.target.value; // wrong logic in react 
+        changeDepartment(event.target.value)
+    }
+
     return(
       <>
             <div>
@@ -39,7 +48,9 @@ function Learning(){
                 ?<b>you are allowed to attend training</b>
                 :<i>NOT ALLOWED</i>}
             </p>
+            <label>Enter Dept code (DN, JS, PHP):</label><input type="text" onKeyUp={checkEntry}></input>
            </div>
+           <hr />
            <div>
             <h5 className="text-center">&& operator (if then statements)</h5>
             <p className="fw-bold">
@@ -95,3 +106,8 @@ export default Learning;
 <React.Fragment>   is similar to <>
 */
 
+/* Uncontrolled Input fields 
+take user input : deparment code onKeyUp
+department variable : changed accoroding user input
+state change 
+1. jsx element : input type=text*/
