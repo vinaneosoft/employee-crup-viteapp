@@ -8,11 +8,21 @@ function Learning(){
     let department="JS";
     let married=true;
     let training="react";
+
+    // js styling : css keys must be in camel case
+    const paraStyle={
+    textDecoration: "underline",
+    color:'yellow'
+    }
+  
     return(
       <>
+            <div>
+            <p style={paraStyle}>Employee CRUD operations : Create, Read, Update, Delete</p>
+            </div>
            <div>
            <h5>Ternary Operator in JSX Expression (if then else statements)</h5>
-            <p>
+            <p style={paraStyle}>
                 {department.toUpperCase()=='DN'
                 ?<b>you are allowed to attend training</b>
                 :<i>NOT ALLOWED</i>}
