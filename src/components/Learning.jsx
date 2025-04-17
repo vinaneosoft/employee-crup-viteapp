@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactEmployees from "./ReactEmployees";
 import AngularEmployees from "./AngularEmployees";
 
 
 
 function Learning(){
-   
 
-    let [department, setDepartment]=useState("");
+    let [department, setDept]=useState("JS"); //1.
+
+    useEffect(()=>console.log("UI rendered"));
 
     let married=true;
     let training="react";
@@ -32,8 +33,8 @@ function Learning(){
    
     function checkEntry(event){
         console.log(event.target.value); // UI
-       // department=event.target.value; // wrong logic in react 
-        setDepartment(event.target.value)
+        //department=event.target.value; // wrong logic in react : mutable logic 
+        setDept(event.target.value) // right logic , immutable logic in react //2.
     }
 
     return(
@@ -43,6 +44,7 @@ function Learning(){
             </div>
            <div>
            <h5 className="text-info bg-danger">Ternary Operator in JSX Expression (if then else statements)</h5>
+            <p><label>Department : </label>{department}</p>
             <p style={paraStyle} >
                 {department.toUpperCase()=='DN'
                 ?<b>you are allowed to attend training</b>
@@ -96,6 +98,7 @@ function Learning(){
                 <button className="btn btn-primary" 
                 onClick={(ev)=>getCompanyName("Neosoft", ev) }>SEND NAME</button>
             </p>
+           
            </div>
       </>
     );
