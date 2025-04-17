@@ -39,7 +39,7 @@ function Learning(){
     function checkMaritalStatus(event){
         console.log(event.target.value); 
         console.log(typeof event.target.value); 
-        
+        setStatus(event.target.value=="true" ? true : false); //3
     }
 
     return(
@@ -61,12 +61,14 @@ function Learning(){
            <hr />
            <div>
             <h5 className="text-center">&& operator (if then statements)</h5>
+            <label>Are you married?</label>   { /* 2. */}
             <select onChange={checkMaritalStatus}>
                 <option value="true">YES</option>
                 <option value="false">NO</option>
             </select>
+            <br />
             <p className="fw-bold">
-                {married && <mark>Employee is married</mark>}
+                {married && <mark>Employee can work Hybrid (WFH / WFO)</mark>}
             </p>
            </div>
            <div>
