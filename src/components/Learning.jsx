@@ -11,9 +11,9 @@ function Learning(){
 
     let [married, setStatus]=  useState(true);  //1.
 
-    let trainingRef =useRef(); //React.RefObject
+    let trainingRef =useRef(); //React.RefObject  //1.
 
-    let training="angular"; // maintain state of training variable using useState
+    let training="angular"; //1. maintain state of training variable using useState
 
     // js styling : css keys must be in camel case
     const paraStyle={
@@ -50,8 +50,8 @@ function Learning(){
        // const ele=document.getElementById("tech") // basci script logic
        // const value=ele.value;
        //console.log(trainingRef);
-       //console.log(trainingRef.current.value);
-     // call setter to change value of training variable
+       console.log(trainingRef.current.value);
+     // call setter to change value of training variable //3.
     }
 
     return(
@@ -91,6 +91,7 @@ function Learning(){
                 <option value="web basics">Web Basics</option>
             </datalist>
             <label>Which training to start?</label>
+            {/* 2 */}
             <input className="input-control" type="text" ref={trainingRef}  list="trainingprograms"></input>
             <button className="btn btn-success" 
             onClick={getTrainingDetails}>SEND</button>
