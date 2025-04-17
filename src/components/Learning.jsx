@@ -50,7 +50,8 @@ function Learning(){
                 ?<b>you are allowed to attend training</b>
                 :<i>NOT ALLOWED</i>}
             </p>
-            <label>Enter Dept code (DN, JS, PHP):</label><input type="text" onKeyUp={checkEntry}></input>
+            <label>Enter Dept code (DN, JS, PHP):</label>
+            <input type="text" onKeyUp={checkEntry}></input>
            </div>
            <hr />
            <div>
