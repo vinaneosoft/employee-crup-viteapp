@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactEmployees from "./ReactEmployees";
 import AngularEmployees from "./AngularEmployees";
 
@@ -11,7 +11,9 @@ function Learning(){
 
     let [married, setStatus]=  useState(true);  //1.
 
-    let training="angular";
+    let trainingRef =useRef(); //React.RefObject
+
+    let training="angular"; // maintain state of training variable using useState
 
     // js styling : css keys must be in camel case
     const paraStyle={
@@ -43,7 +45,13 @@ function Learning(){
         setStatus(event.target.value=="true" ? true : false); //3
     }
     function getTrainingDetails(){
-
+        // event : button
+        // value : textfield
+       // const ele=document.getElementById("tech") // basci script logic
+       // const value=ele.value;
+       //console.log(trainingRef);
+       //console.log(trainingRef.current.value);
+     // call setter to change value of training variable
     }
 
     return(
@@ -83,8 +91,9 @@ function Learning(){
                 <option value="web basics">Web Basics</option>
             </datalist>
             <label>Which training to start?</label>
-            <input className="input-control" type="text" list="trainingprograms"></input>
-            <button className="btn btn-success" onClick={getTrainingDetails}>SEND</button>
+            <input className="input-control" type="text" ref={trainingRef}  list="trainingprograms"></input>
+            <button className="btn btn-success" 
+            onClick={getTrainingDetails}>SEND</button>
             <h5> Employee List for {training.toUpperCase()} training </h5>
                 {
                     training.toUpperCase()=="REACT" 
