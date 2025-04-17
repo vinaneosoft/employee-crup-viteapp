@@ -11,7 +11,8 @@ function Learning(){
 
     let [married, setStatus]=  useState(true);  //1.
 
-    let training="react";
+    let training="angular";
+
     // js styling : css keys must be in camel case
     const paraStyle={
     textDecoration: "underline",
@@ -32,14 +33,17 @@ function Learning(){
     }
    
     function checkEntry(event){
-        console.log(event.target.value); // UI
+       // console.log(event.target.value); // UI
         //department=event.target.value; // wrong logic in react : mutable logic 
         setDept(event.target.value) // right logic , immutable logic in react //2.
     }
     function checkMaritalStatus(event){
-        console.log(event.target.value); 
-        console.log(typeof event.target.value); 
+        //console.log(event.target.value); 
+        //console.log(typeof event.target.value); 
         setStatus(event.target.value=="true" ? true : false); //3
+    }
+    function getTrainingDetails(){
+
     }
 
     return(
@@ -72,6 +76,15 @@ function Learning(){
             </p>
            </div>
            <div>
+            <datalist id="trainingprograms">
+                <option value="angular">Angular</option>
+                <option value="python">Python</option>
+                <option value="react">React</option>
+                <option value="web basics">Web Basics</option>
+            </datalist>
+            <label>Which training to start?</label>
+            <input className="input-control" type="text" list="trainingprograms"></input>
+            <button className="btn btn-success" onClick={getTrainingDetails}>SEND</button>
             <h5> Employee List for {training.toUpperCase()} training </h5>
                 {
                     training.toUpperCase()=="REACT" 
