@@ -13,7 +13,7 @@ function Learning(){
 
     let trainingRef =useRef(); //React.RefObject  //1.
 
-    let training="angular"; //1. maintain state of training variable using useState
+    let [training, setTraining]=useState("angular"); //1. maintain state of training variable using useState
 
     // js styling : css keys must be in camel case
     const paraStyle={
@@ -51,6 +51,7 @@ function Learning(){
        // const value=ele.value;
        //console.log(trainingRef);
        console.log(trainingRef.current.value);
+       setTraining(trainingRef.current.value.trim());
      // call setter to change value of training variable //3.
     }
 
@@ -99,7 +100,8 @@ function Learning(){
                 {
                     training.toUpperCase()=="REACT" 
                     ? <ReactEmployees></ReactEmployees>
-                    : <AngularEmployees></AngularEmployees>
+                    : (training.toUpperCase()=="ANGULAR" 
+                        ? <AngularEmployees></AngularEmployees> : <b>NO EMPLOYEE LIST AVAILABLE</b>)
                 }
            </div>
            <div>
