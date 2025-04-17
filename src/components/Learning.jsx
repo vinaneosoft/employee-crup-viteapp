@@ -7,10 +7,10 @@ import AngularEmployees from "./AngularEmployees";
 function Learning(){
 
     let [department, setDept]=useState("JS"); //1.
-
     useEffect(()=>console.log("UI rendered"));
 
-    let married=true;
+    let [married, setStatus]=  useState(true);  //1.
+
     let training="react";
     // js styling : css keys must be in camel case
     const paraStyle={
@@ -36,6 +36,11 @@ function Learning(){
         //department=event.target.value; // wrong logic in react : mutable logic 
         setDept(event.target.value) // right logic , immutable logic in react //2.
     }
+    function checkMaritalStatus(event){
+        console.log(event.target.value); 
+        console.log(typeof event.target.value); 
+        
+    }
 
     return(
       <>
@@ -56,6 +61,10 @@ function Learning(){
            <hr />
            <div>
             <h5 className="text-center">&& operator (if then statements)</h5>
+            <select onChange={checkMaritalStatus}>
+                <option value="true">YES</option>
+                <option value="false">NO</option>
+            </select>
             <p className="fw-bold">
                 {married && <mark>Employee is married</mark>}
             </p>
