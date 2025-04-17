@@ -21,7 +21,8 @@ function Learning(){
     textDecoration: "underline",
     fontStyle:"italic",
     color:'yellow'
-    });
+    });  // 2.
+
     function handleClickEvent(){
        alert("Button clicked.....");
     }
@@ -59,14 +60,12 @@ function Learning(){
     function setParaColor(event){
        console.log(event.target.value);
        //paraStyle.color=event.target.value // mutable logic not allowed in react // Cannot assign to read only property 'color' of object 
-      
-       setStyle({...paraStyle , color:event.target.value });
+       setStyle({...paraStyle , color:event.target.value }); // immutable logic
     }
-
     return(
       <>
             <div>
-            <input type="color" onInput={setParaColor}></input>
+            <input type="color" onInput={setParaColor}></input> {/* 1. */}
             <p style={paraStyle}>Employee CRUD operations : Create, Read, Update, Delete</p>
             </div>
            <div>
