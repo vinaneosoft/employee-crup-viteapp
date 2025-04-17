@@ -19,8 +19,8 @@ function App() {
    <>
     {jsxelement}
     <MyHeader></MyHeader>
-   {/*  <Learning></Learning> */}
-    <AdminLogin></AdminLogin>
+    <Learning></Learning>
+    {/* <AdminLogin></AdminLogin> */}
     <MyFooter></MyFooter>
    </>
   )

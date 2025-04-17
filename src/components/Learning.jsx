@@ -16,10 +16,12 @@ function Learning(){
     let [training, setTraining]=useState("angular"); //1. maintain state of training variable using useState
 
     // js styling : css keys must be in camel case
-    const paraStyle={
+
+    const [paraStyle, setStyle]= useState({
     textDecoration: "underline",
+    fontStyle:"italic",
     color:'yellow'
-    }
+    });
     function handleClickEvent(){
        alert("Button clicked.....");
     }
@@ -54,10 +56,17 @@ function Learning(){
        setTraining(trainingRef.current.value.trim());
      // call setter to change value of training variable //3.
     }
+    function setParaColor(event){
+       console.log(event.target.value);
+       //paraStyle.color=event.target.value // mutable logic not allowed in react // Cannot assign to read only property 'color' of object 
+      
+       setStyle({...paraStyle , color:event.target.value });
+    }
 
     return(
       <>
             <div>
+            <input type="color" onInput={setParaColor}></input>
             <p style={paraStyle}>Employee CRUD operations : Create, Read, Update, Delete</p>
             </div>
            <div>
