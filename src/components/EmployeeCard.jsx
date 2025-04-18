@@ -10,6 +10,7 @@ function EmployeeCard({employee}){
         <div className="col-md-8">
             <div className="card-body">
                 <h6 className="card-title text-success"><span>{employee.empName.toUpperCase()}</span><span> (#{employee.empId})</span></h6>
+                <h6>{employee.profile}</h6>
                 <p className="card-text">{employee.empDescription}</p>
             </div>
             <ul class="list-group list-group-flush">
