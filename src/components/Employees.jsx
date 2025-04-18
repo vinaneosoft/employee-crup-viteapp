@@ -23,11 +23,19 @@ function Employees(){
             empId:333, empName:"veena patil", empDescription:"xyz", 
             empDepartment:"LD", empExperience:20, joiningDate:"12-Dec-2019", 
             profilePic:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg' 
+        },
+        {
+            empId:333, empName:"veena patil", empDescription:"xyz", 
+            empDepartment:"LD", empExperience:20, joiningDate:"12-Dec-2019", 
+            profilePic:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg' 
         }
     ]
 
+    const employeeCards= employees.map(employee=><EmployeeCard></EmployeeCard>)
     return (
-        <EmployeeCard></EmployeeCard>
+        <article>
+            {employeeCards}
+        </article>
     );
 }
 
