@@ -9,13 +9,13 @@ function EmployeeCard({employee}){
         </div>
         <div className="col-md-8">
             <div className="card-body">
-                <h5 className="card-title"><span>{employee.empName}</span><span>{employee.empId}</span></h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h6 className="card-title text-success"><span>{employee.empName.toUpperCase()}</span><span> (#{employee.empId})</span></h6>
+                <p className="card-text">{employee.empDescription}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item"><span>joined on </span><b>{employee.joiningDate}</b></li>
+                <li class="list-group-item"><span>working in </span><b>{employee.empDepartment}</b></li>
+                <li class="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
             </ul>
         </div>
     </div>
