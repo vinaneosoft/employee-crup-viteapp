@@ -5,6 +5,7 @@ import MyHeader from './components/MyHeader'
 import MyFooter from './components/MyFooter'
 import Learning from './components/Learning';
 import AdminLogin from './components/AdminLogin';
+import Employees from './components/Employees';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -19,8 +20,7 @@ function App() {
    <>
     {jsxelement}
     <MyHeader></MyHeader>
-   {/*  <Learning></Learning> */}
-     <AdminLogin></AdminLogin>
+    <Employees></Employees>
     <MyFooter></MyFooter>
    </>
   )
