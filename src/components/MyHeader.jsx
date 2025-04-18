@@ -4,14 +4,14 @@ import './MyHeader.css';
 
 /* jsx attributes in camelcase */
 
-function MyHeader(){
+function MyHeader(props){
 
 const subHeading="employee CRUD"
 
     return(
        <header className="top">
-         <h3 className="subheading text-center">{subHeading}</h3>
-         <Navbar></Navbar>
+         <h3 className="subheading text-center">{subHeading}, {props.companyName}</h3>
+         <Navbar mainheading={props.mainheading}></Navbar>
        </header>
     );
 }

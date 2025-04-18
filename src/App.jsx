@@ -13,13 +13,14 @@ import Employees from './components/Employees';
  normal jsx elements : all letter small (similar like html) */
 function App() {
   const mainheading="EMPLOYEE MANAGEMENT"; // data
+  const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
   
   return (
    <>
     {jsxelement}
-    <MyHeader></MyHeader>
+    <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
     <Employees></Employees>
     <MyFooter></MyFooter>
    </>
