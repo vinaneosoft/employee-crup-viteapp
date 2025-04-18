@@ -31,7 +31,8 @@ function Employees(){
         }
     ]
 
-    const employeeCards= employees.map(employee=><EmployeeCard></EmployeeCard>)
+    /* react props : parent has employee object to be shared to direct child */
+    const employeeCards= employees.map(employee=><EmployeeCard  employee={employee} ></EmployeeCard>)
     return (
         <article>
             {employeeCards}
