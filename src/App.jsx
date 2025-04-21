@@ -18,13 +18,10 @@ function App() {
   const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
-
    let learningObject={
     courseName:'Angular',
     courseDuration:100
    }
-
-
 
   setTimeout(() => {
     //mainheading="Developer Management" // react wrong
@@ -36,7 +33,8 @@ function App() {
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
    {/*  <Employees></Employees> */}
    
-   
+   {/*2. provide data deep in hirarchy using
+   context object created */}
    <LearningContext value={learningObject} >
       <Learning></Learning>
    </LearningContext>

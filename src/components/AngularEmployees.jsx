@@ -5,7 +5,9 @@ import { LearningContext } from "../model/context";
 function AngularEmployees(){
     const angularEmps=['Mohan','Hairsh','Poonam'];
 
-    const {courseName,courseDuration}=useContext(LearningContext);
+    /* 3. Consume data using hook useContext */
+    const {courseName,courseDuration}=
+    useContext(LearningContext);
 
     return (
       <>
