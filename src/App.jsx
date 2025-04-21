@@ -18,14 +18,24 @@ function App() {
   const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
-   let learningObject={
+   let [learningObject, setLearning]= useState({
     courseName:'Angular',
+    courseTuitor:"Vina Patil",
     courseDuration:100
-   }
+   })
 
   setTimeout(() => {
     //mainheading="Developer Management" // react wrong
     setHeading("EMPLOYEE MANAGEMENT");
+
+    //learningObject.courseDuration=120; // React wrong , immutable
+    setLearning(
+      {
+        ...learningObject, 
+        courseDuration:120
+      }
+    );
+
   }, 3000);   // 2. timer to change the data
   return (
    <>
@@ -35,11 +45,14 @@ function App() {
    
    {/*2. provide data deep in hirarchy using
    context object created */}
+    <p>
+        <b>{learningObject.courseName}</b> <br />
+        <b>{learningObject.courseTuitor}</b> <br />
+        <b>{learningObject.courseDuration} hrs</b>
+      </p>
    <LearningContext value={learningObject} >
       <Learning></Learning>
    </LearningContext>
-
-
     <MyFooter></MyFooter>
    </>
   )
