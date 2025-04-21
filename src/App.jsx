@@ -7,6 +7,7 @@ import Learning from './components/Learning';
 import AdminLogin from './components/AdminLogin';
 import Employees from './components/Employees';
 import { useState } from 'react';
+import { LearningContext } from './model/context';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -18,6 +19,13 @@ function App() {
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
 
+   let learningObject={
+    courseName:'Angular',
+    courseDuration:100
+   }
+
+
+
   setTimeout(() => {
     //mainheading="Developer Management" // react wrong
     setHeading("EMPLOYEE MANAGEMENT");
@@ -27,7 +35,13 @@ function App() {
     {jsxelement}
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
    {/*  <Employees></Employees> */}
-   <Learning></Learning>
+   
+   
+   <LearningContext value={learningObject} >
+      <Learning></Learning>
+   </LearningContext>
+
+
     <MyFooter></MyFooter>
    </>
   )

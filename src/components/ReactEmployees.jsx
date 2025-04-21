@@ -14,7 +14,7 @@ function ReactEmployees({sendtoParent}){  //4. take fun ref from  prop
            {liElements}
        </ol>
        <div>
-        <button onClick={()=>sendtoParent(employeeTypes)}>SEND</button> {/*5. call parent function by passing child data */}
+        <button className="btn btn-secondary" onClick={()=>sendtoParent(employeeTypes)}>SEND</button> {/*5. call parent function by passing child data */}
        </div>
       </>
     
