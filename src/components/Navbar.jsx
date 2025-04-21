@@ -2,6 +2,9 @@
 // h4 : JSX, {heading } : javascript intergration in jsx
 function Navbar({mainheading}){
   const heading="navbar";
+
+
+  
   //logic 
     return(
       <nav className="navbar navbar-expand-md bg-body-tertiary">

@@ -13,7 +13,7 @@ import { useState } from 'react';
  /* component : first letter captical 
  normal jsx elements : all letter small (similar like html) */
 function App() {
-  const [mainheading, setHeading]= useState("DEVELOPER MANAGEMENT"); // data
+  const [mainheading, setHeading]= useState("DEVELOPER MANAGEMENT"); // data 1. useState
   const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
@@ -21,12 +21,13 @@ function App() {
   setTimeout(() => {
     //mainheading="Developer Management" // react wrong
     setHeading("EMPLOYEE MANAGEMENT");
-  }, 3000);
+  }, 3000);   // 2. timer to change the data
   return (
    <>
     {jsxelement}
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
-    <Employees></Employees>
+   {/*  <Employees></Employees> */}
+   <Learning></Learning>
     <MyFooter></MyFooter>
    </>
   )

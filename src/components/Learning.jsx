@@ -6,14 +6,14 @@ import AngularEmployees from "./AngularEmployees";
 
 function Learning(){
 
-    let [department, setDept]=useState("JS"); //1.
+    let [department, setDept]=useState("JS"); 
     useEffect(()=>console.log("UI rendered"));
 
-    let [married, setStatus]=  useState(true);  //1.
+    let [married, setStatus]=  useState(true);  
 
-    let trainingRef =useRef(); //React.RefObject  //1.
+    let trainingRef =useRef(); //React.RefObject 
 
-    let [training, setTraining]=useState("angular"); //1. maintain state of training variable using useState
+    let [training, setTraining]=useState("angular"); // maintain state of training variable using useState
 
     // js styling : css keys must be in camel case
 
@@ -40,12 +40,12 @@ function Learning(){
     function checkEntry(event){
        // console.log(event.target.value); // UI
         //department=event.target.value; // wrong logic in react : mutable logic 
-        setDept(event.target.value) // right logic , immutable logic in react //2.
+        setDept(event.target.value) // right logic , immutable logic in react 
     }
     function checkMaritalStatus(event){
         //console.log(event.target.value); 
         //console.log(typeof event.target.value); 
-        setStatus(event.target.value=="true" ? true : false); //3
+        setStatus(event.target.value=="true" ? true : false);
     }
     function getTrainingDetails(){
         // event : button
@@ -55,17 +55,24 @@ function Learning(){
        //console.log(trainingRef);
        console.log(trainingRef.current.value);
        setTraining(trainingRef.current.value.trim());
-     // call setter to change value of training variable //3.
+     // call setter to change value of training variable 
     }
     function setParaColor(event){
        console.log(event.target.value);
        //paraStyle.color=event.target.value // mutable logic not allowed in react // Cannot assign to read only property 'color' of object 
        setStyle({...paraStyle , color:event.target.value }); // immutable logic
     }
+
+
+    function getDataFromChild(empType){  //1. it will hold data coming from child side
+        console.log(empType);
+        
+    }
+
     return(
       <>
             <div>
-            <input type="color" onInput={setParaColor}></input> {/* 1. */}
+            <input type="color" onInput={setParaColor}></input>
             <p style={paraStyle}>Employee CRUD operations : Create, Read, Update, Delete</p>
             </div>
            <div>
@@ -82,7 +89,7 @@ function Learning(){
            <hr />
            <div>
             <h5 className="text-center">&& operator (if then statements)</h5>
-            <label>Are you married?</label>   { /* 2. */}
+            <label>Are you married?</label>   
             <select onChange={checkMaritalStatus}>
                 <option value="true">YES</option>
                 <option value="false">NO</option>
@@ -100,14 +107,15 @@ function Learning(){
                 <option value="web basics">Web Basics</option>
             </datalist>
             <label>Which training to start?</label>
-            {/* 2 */}
+           
             <input className="input-control" type="text" ref={trainingRef}  list="trainingprograms"></input>
             <button className="btn btn-success" 
             onClick={getTrainingDetails}>SEND</button>
+             {/* 2. pass fun ref to child */}
             <h5> Employee List for {training.toUpperCase()} training </h5>
                 {
                     training.toUpperCase()=="REACT" 
-                    ? <ReactEmployees></ReactEmployees>
+                    ? <ReactEmployees sendtoParent={getDataFromChild}></ReactEmployees>
                     : (training.toUpperCase()=="ANGULAR" 
                         ? <AngularEmployees></AngularEmployees> : <b>NO EMPLOYEE LIST AVAILABLE</b>)
                 }
