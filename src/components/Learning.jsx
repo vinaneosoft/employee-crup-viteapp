@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import ReactEmployees from "./ReactEmployees";
 import AngularEmployees from "./AngularEmployees";
 
 
 
 function Learning(){
-
     let [department, setDept]=useState("JS"); 
-    useEffect(()=>console.log("UI rendered"));
+
 
     let [married, setStatus]=  useState(true);  
 
@@ -117,7 +116,7 @@ function Learning(){
                     training.toUpperCase()=="REACT" 
                     ? <ReactEmployees sendtoParent={getDataFromChild}></ReactEmployees>
                     : (training.toUpperCase()=="ANGULAR" 
-                        ? <AngularEmployees></AngularEmployees> : <b>NO EMPLOYEE LIST AVAILABLE</b>)
+                        ? <AngularEmployees   ></AngularEmployees> : <b>NO EMPLOYEE LIST AVAILABLE</b>)
                 }
            </div>
            <div>

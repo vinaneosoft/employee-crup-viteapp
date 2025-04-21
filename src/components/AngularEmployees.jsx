@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LearningContext } from "../model/context";
 
 /* looping using javascript , JSX and expressions */
@@ -8,7 +8,6 @@ function AngularEmployees(){
     /* 3. Consume data using hook useContext */
     const {courseName,courseTuitor,courseDuration}=
     useContext(LearningContext);
-
     return (
       <>
        <p>

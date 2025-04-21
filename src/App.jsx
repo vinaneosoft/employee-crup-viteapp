@@ -23,7 +23,6 @@ function App() {
     courseTuitor:"Vina Patil",
     courseDuration:100
    })
-
   setTimeout(() => {
     //mainheading="Developer Management" // react wrong
     setHeading("EMPLOYEE MANAGEMENT");
@@ -41,17 +40,13 @@ function App() {
    <>
     {jsxelement}
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
-   {/*  <Employees></Employees> */}
+    <Employees></Employees> 
    
    {/*2. provide data deep in hirarchy using
    context object created */}
-    <p>
-        <b>{learningObject.courseName}</b> <br />
-        <b>{learningObject.courseTuitor}</b> <br />
-        <b>{learningObject.courseDuration} hrs</b>
-      </p>
+ 
    <LearningContext value={learningObject} >
-      <Learning></Learning>
+      <Learning  ></Learning>
    </LearningContext>
     <MyFooter></MyFooter>
    </>
