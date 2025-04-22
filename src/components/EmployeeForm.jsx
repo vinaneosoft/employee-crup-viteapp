@@ -38,11 +38,11 @@ function EmployeeForm(){
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">SHORT DESCRIPTION</label>
-                    <textarea  className="form-control"></textarea>
+                    <textarea value={employee.empDescription} className="form-control"></textarea>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">DEPARTMENT ID</label>
-                    <select className="form-select">
+                    <select className="form-select" value={employee.empDepartment}>
                         {
                             departments.map((dept,idx)=><option key={idx} value={dept.deptId}>
                             {dept.deptName}
@@ -52,15 +52,15 @@ function EmployeeForm(){
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">EXPERIENCE (in year)</label>
-                    <input type="number"  className="form-control"/>
+                    <input type="number" value={employee.empExperience}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">JOINING DATE</label>
-                    <input type="date"  className="form-control"/>
+                    <input type="date" value={employee.joiningDate} className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">PROFILE PIC LINK</label>
-                    <input type="text"  className="form-control"/>
+                    <input type="text" value={employee.profilePic} className="form-control"/>
                 </div>
                 <button type="submit" className="mx-3 btn btn-primary">ADD</button>
                 <button type="reset" className="btn btn-primary">RESET</button>
