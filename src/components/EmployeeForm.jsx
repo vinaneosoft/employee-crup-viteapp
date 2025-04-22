@@ -1,6 +1,5 @@
 
 function EmployeeForm(){
-
     const departments=[
         {
             deptId:'LD',
@@ -42,6 +41,7 @@ function EmployeeForm(){
                             </option>)
                         }
                     </select>
+                    
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">EXPERIENCE (in year)</label>
