@@ -8,6 +8,7 @@ import AdminLogin from './components/AdminLogin';
 import Employees from './components/Employees';
 import { useState } from 'react';
 import { LearningContext } from './model/context';
+import InputDemo from './components/InputDemo';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -40,14 +41,17 @@ function App() {
    <>
     {jsxelement}
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
-    <Employees></Employees> 
+  {/*   <Employees></Employees>  */}
    
    {/*2. provide data deep in hirarchy using
    context object created */}
  
-   <LearningContext value={learningObject} >
+   {/* <LearningContext value={learningObject} >
       <Learning  ></Learning>
-   </LearningContext>
+   </LearningContext> */}
+
+    <InputDemo></InputDemo>
+
     <MyFooter></MyFooter>
    </>
   )
