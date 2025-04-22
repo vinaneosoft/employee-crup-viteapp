@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function EmployeeForm(){
     const departments=[
@@ -23,6 +23,19 @@ function EmployeeForm(){
         profilePic:'' 
     });
 
+    function collectDetails(event){
+        console.log(event.target.id);
+        console.log(event.target.value);
+        //employee.empName=event.target.value : react wants immutable object
+        setEmployee(
+            {
+                ...employee,
+                [event.target.id]:event.target.value
+
+            }
+        )
+    }
+    useEffect(()=>console.log(employee), [employee]);
     return(
         <>
          <h4 className="text-center">EMPLOYEE INPUT FORM</h4>
@@ -30,19 +43,19 @@ function EmployeeForm(){
             <form className="bg-secondary w-50 p-3" >
                 <div className="mb-3">
                     <label className="form-label">NAME</label>
-                    <input type="text" value={employee.empName}  className="form-control"/>
+                    <input type="text" id="empName" value={employee.empName} onChange={collectDetails} className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">PROFILE</label>
-                    <input type="text" value={employee.profile}  className="form-control"/>
+                    <input type="text" id="profile" value={employee.profile} onChange={collectDetails}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">SHORT DESCRIPTION</label>
-                    <textarea value={employee.empDescription} className="form-control"></textarea>
+                    <textarea id="empDescription" value={employee.empDescription} onChange={collectDetails} className="form-control"></textarea>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">DEPARTMENT ID</label>
-                    <select className="form-select" value={employee.empDepartment}>
+                    <select id="empDepartment" className="form-select" onChange={collectDetails} value={employee.empDepartment}>
                         {
                             departments.map((dept,idx)=><option key={idx} value={dept.deptId}>
                             {dept.deptName}
@@ -52,15 +65,15 @@ function EmployeeForm(){
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">EXPERIENCE (in year)</label>
-                    <input type="number" value={employee.empExperience}  className="form-control"/>
+                    <input type="number" onChange={collectDetails} value={employee.empExperience}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">JOINING DATE</label>
-                    <input type="date" value={employee.joiningDate} className="form-control"/>
+                    <input type="date"  onChange={collectDetails} value={employee.joiningDate} className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">PROFILE PIC LINK</label>
-                    <input type="text" value={employee.profilePic} className="form-control"/>
+                    <input type="text" onChange={collectDetails} value={employee.profilePic} className="form-control"/>
                 </div>
                 <button type="submit" className="mx-3 btn btn-primary">ADD</button>
                 <button type="reset" className="btn btn-primary">RESET</button>
