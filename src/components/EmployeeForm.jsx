@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 function EmployeeForm(){
     const departments=[
         {
+            deptId:'SM',
+            deptName:'Sales and Marketting'
+        },
+        {
             deptId:'LD',
             deptName:'Learning Devlopment'
         },
@@ -19,7 +23,7 @@ function EmployeeForm(){
    let [employee, setEmployee]=useState({
         empId:"", empName:"", profile:"", 
         empDescription:"", 
-        empDepartment:"", empExperience:"", joiningDate:"", 
+        empDepartment:departments[0].deptId, empExperience:"", joiningDate:"", 
         profilePic:'' 
     });
 
@@ -65,15 +69,15 @@ function EmployeeForm(){
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">EXPERIENCE (in year)</label>
-                    <input type="number" onChange={collectDetails} value={employee.empExperience}  className="form-control"/>
+                    <input type="number" id="empExperience" onChange={collectDetails} value={employee.empExperience}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">JOINING DATE</label>
-                    <input type="date"  onChange={collectDetails} value={employee.joiningDate} className="form-control"/>
+                    <input type="date" id="joiningDate" onChange={collectDetails} value={employee.joiningDate} className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">PROFILE PIC LINK</label>
-                    <input type="text" onChange={collectDetails} value={employee.profilePic} className="form-control"/>
+                    <input type="text" id="profilePic" onChange={collectDetails} value={employee.profilePic} className="form-control"/>
                 </div>
                 <button type="submit" className="mx-3 btn btn-primary">ADD</button>
                 <button type="reset" className="btn btn-primary">RESET</button>
