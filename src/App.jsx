@@ -42,7 +42,7 @@ function App() {
    <>
     {jsxelement}
     <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
-  {/*   <Employees></Employees>  */}
+    {/*  <Employees></Employees> */}
    
    {/*2. provide data deep in hirarchy using
    context object created */}

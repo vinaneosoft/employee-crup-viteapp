@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 function EmployeeForm(){
     const departments=[
@@ -15,6 +16,13 @@ function EmployeeForm(){
         }
     ]
 
+   let [employee, setEmployee]=useState({
+        empId:"", empName:"", profile:"", 
+        empDescription:"", 
+        empDepartment:"", empExperience:"", joiningDate:"", 
+        profilePic:'' 
+    });
+
     return(
         <>
          <h4 className="text-center">EMPLOYEE INPUT FORM</h4>
@@ -22,11 +30,11 @@ function EmployeeForm(){
             <form className="bg-secondary w-50 p-3" >
                 <div className="mb-3">
                     <label className="form-label">NAME</label>
-                    <input type="text" className="form-control"/>
+                    <input type="text" value={employee.empName}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">PROFILE</label>
-                    <input type="text"  className="form-control"/>
+                    <input type="text" value={employee.profile}  className="form-control"/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">SHORT DESCRIPTION</label>
@@ -41,7 +49,6 @@ function EmployeeForm(){
                             </option>)
                         }
                     </select>
-                    
                 </div>
                 <div className="mb-3">
                     <label  className="form-label">EXPERIENCE (in year)</label>
@@ -62,5 +69,4 @@ function EmployeeForm(){
         </>
     );
 }
-
 export default EmployeeForm;
