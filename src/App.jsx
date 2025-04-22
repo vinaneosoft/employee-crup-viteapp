@@ -9,6 +9,7 @@ import Employees from './components/Employees';
 import { useState } from 'react';
 import { LearningContext } from './model/context';
 import InputDemo from './components/InputDemo';
+import EmployeeForm from './components/EmployeeForm';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -50,7 +51,8 @@ function App() {
       <Learning  ></Learning>
    </LearningContext> */}
 
-    <InputDemo></InputDemo>
+ {/*    <InputDemo></InputDemo> */}
+ <EmployeeForm></EmployeeForm>
 
     <MyFooter></MyFooter>
    </>
