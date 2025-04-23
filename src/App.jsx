@@ -43,22 +43,7 @@ function App() {
   return (
    <>
     {jsxelement}
-    <MyHeader mainheading={mainheading}  companyName={companyName} ></MyHeader>
-    {/*  <Employees></Employees> */}
-   
-   {/*2. provide data deep in hirarchy using
-   context object created */}
- 
-   {/* <LearningContext value={learningObject} >
-      <Learning  ></Learning>
-   </LearningContext> */}
-
- {/*    <InputDemo></InputDemo> */}
-{/*  <EmployeeForm></EmployeeForm> */}
-
-    <button onClick={()=>setFlag(!flag)}>MOUNT TOGGLE</button>
-    {flag && <Hooks></Hooks>}
-
+    <MyHeader></MyHeader>
     <MyFooter></MyFooter>
    </>
   )
