@@ -6,6 +6,7 @@ function Hooks(){
 
 
     let [counter1, setCounter1]=useState(0);
+    let [counter2, setCounter2]=useState(0);
 
     /* useEffect without dependancy array  : callback of useEffect 
     may go in infinite loop*/
@@ -18,6 +19,7 @@ function Hooks(){
         console.log("set up..UI rendered......");
         console.log("connected to database....");
         console.log(counter1);
+        console.log(counter2);
         setUp(counter1);
         console.log("-------------------------------");
      
@@ -25,9 +27,10 @@ function Hooks(){
             console.log("clean up.......");
             console.log("disconnected from database....."); 
             console.log(counter1);
+            console.log(counter2);
             cleanup(counter1);
         }
-    }, [counter1]);
+    }, [counter1, counter2]);
 
 
     return(
@@ -47,6 +50,10 @@ function Hooks(){
     <div>
         <label>State variable Counter1 : </label><b> {counter1}</b>
         <button onClick={()=>setCounter1(counter1+1)}>INCREMENT counter1</button>
+    </div>
+    <div>
+        <label>State variable Counter2 : </label><b> {counter2}</b>
+        <button onClick={()=>setCounter2(counter2+1)}>INCREMENT counter2</button>
     </div>
     </>
     );
