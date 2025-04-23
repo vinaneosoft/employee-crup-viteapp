@@ -27,7 +27,7 @@ function App() {
     courseTuitor:"Vina Patil",
     courseDuration:100
    })
-  setTimeout(() => {
+ /*  setTimeout(() => {
     //mainheading="Developer Management" // react wrong
     setHeading("EMPLOYEE MANAGEMENT");
 
@@ -39,7 +39,7 @@ function App() {
       }
     );
 
-  }, 3000);   // 2. timer to change the data
+  }, 3000); */   // 2. timer to change the data
   return (
    <>
     {jsxelement}

@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 
 function Hooks(){
 
 
-    let [counter1, setCounter1]=useState(0);
+    let [counter1, setCounter1]=useState(0); // UI render, value will be maintained
     let [counter2, setCounter2]=useState(0);
-    let counter3 =0; // internally
+    let counter3 =0; // internally , value will not be maintained
+
+    let counter4=useRef(0);  // RefObject // internally, value will be maintained
 
     /* useEffect without dependancy array  : callback of useEffect 
     may go in infinite loop*/
@@ -65,6 +67,18 @@ function Hooks(){
             console.log("counter3: "+counter3);
         }
         }>INCREMENT counter3</button>
+    </div>
+    <div>
+        <p>ref variables state gets maintained across every render of UI
+        To maintain the states and not to render them on UI but use them internally, always use ref variables,
+        if ref variable value gets changed, UI will not be rendered,
+        </p>
+        <label>Ref variable Counter4 : </label><b> {counter4.current}</b> {/* never render ref variables on UI */}
+        <button onClick={()=>{
+            counter4.current++;
+            console.log("counter4: ",counter4.current);
+        }
+        }>INCREMENT counter4</button>
     </div>
     </>
     );
