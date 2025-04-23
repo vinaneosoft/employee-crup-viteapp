@@ -7,6 +7,7 @@ function Hooks(){
 
     let [counter1, setCounter1]=useState(0);
     let [counter2, setCounter2]=useState(0);
+    let counter3 =0; // internally
 
     /* useEffect without dependancy array  : callback of useEffect 
     may go in infinite loop*/
@@ -54,6 +55,16 @@ function Hooks(){
     <div>
         <label>State variable Counter2 : </label><b> {counter2}</b>
         <button onClick={()=>setCounter2(counter2+1)}>INCREMENT counter2</button>
+    </div>
+    <div>
+        <p>Local variables gets reinitialized on every render of that component</p>
+        <p>to maintain the states always use state variables</p>
+        <label>Local variable Counter3 : </label><b> {counter3}</b>
+        <button onClick={()=>{
+            counter3++;
+            console.log(counter3);
+        }
+        }>INCREMENT counter3</button>
     </div>
     </>
     );
