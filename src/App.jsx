@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { LearningContext } from './model/context';
 import InputDemo from './components/InputDemo';
 import EmployeeForm from './components/EmployeeForm';
+import HKS from './components/HooksDemo';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -52,7 +53,8 @@ function App() {
    </LearningContext> */}
 
  {/*    <InputDemo></InputDemo> */}
- <EmployeeForm></EmployeeForm>
+{/*  <EmployeeForm></EmployeeForm> */}
+<HKS></HKS>
 
     <MyFooter></MyFooter>
    </>
