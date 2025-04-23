@@ -10,13 +10,14 @@ import { useState } from 'react';
 import { LearningContext } from './model/context';
 import InputDemo from './components/InputDemo';
 import EmployeeForm from './components/EmployeeForm';
-import HKS from './components/HooksDemo';
+import Hooks from './components/HooksDemo';
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
  /* component : first letter captical 
  normal jsx elements : all letter small (similar like html) */
 function App() {
+  let [flag,setFlag]=useState(false);
   const [mainheading, setHeading]= useState("DEVELOPER MANAGEMENT"); // data 1. useState
   const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
@@ -54,7 +55,9 @@ function App() {
 
  {/*    <InputDemo></InputDemo> */}
 {/*  <EmployeeForm></EmployeeForm> */}
-<HKS></HKS>
+
+    <button onClick={()=>setFlag(!flag)}>MOUNT TOGGLE</button>
+    {flag && <Hooks></Hooks>}
 
     <MyFooter></MyFooter>
    </>
