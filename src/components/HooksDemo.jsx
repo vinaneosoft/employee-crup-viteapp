@@ -19,16 +19,16 @@ function Hooks(){
     useEffect(()=>{
         console.log("set up..UI rendered......");
         console.log("connected to database....");
-        console.log(counter1);
-        console.log(counter2);
+        console.log("counter1: "+counter1);
+        console.log("counter2: "+counter2);
         setUp(counter1);
         console.log("-------------------------------");
      
         return ()=>{
             console.log("clean up.......");
             console.log("disconnected from database....."); 
-            console.log(counter1);
-            console.log(counter2);
+            console.log("counter1: "+counter1);
+        console.log("counter2: "+counter2);
             cleanup(counter1);
         }
     }, [counter1, counter2]);
@@ -57,12 +57,12 @@ function Hooks(){
         <button onClick={()=>setCounter2(counter2+1)}>INCREMENT counter2</button>
     </div>
     <div>
-        <p>Local variables gets reinitialized on every render of that component</p>
-        <p>to maintain the states always use state variables</p>
+        <p>Local variables gets reinitialized on every render of that component.
+        To maintain the states and to render them on UI, always use state variables</p>
         <label>Local variable Counter3 : </label><b> {counter3}</b>
         <button onClick={()=>{
             counter3++;
-            console.log(counter3);
+            console.log("counter3: "+counter3);
         }
         }>INCREMENT counter3</button>
     </div>
