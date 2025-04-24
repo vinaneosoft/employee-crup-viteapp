@@ -21,7 +21,7 @@ function Navbar({mainheading}){
             </li>
             <li className="nav-item">
               {/* <a className="nav-link" href="#">SHOW EMPLOYEES</a> */}
-              <Link className="nav-link" to="employees">SHOW EMPLOYEES</Link>
+              <Link className="nav-link" to="showemployees">SHOW EMPLOYEES</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="addemployee">ADD EMPLOYEE</Link>

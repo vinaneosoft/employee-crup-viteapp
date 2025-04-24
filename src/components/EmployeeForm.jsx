@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function EmployeeForm(){
+
+    const {empId}=useParams();
+    console.log(empId);
     const departments=[
         {
             deptId:'SM',

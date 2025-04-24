@@ -38,7 +38,7 @@ import AngularEmployees from './components/AngularEmployees.jsx';
                 ]
             },
             {
-                path:'employees', // userdefined
+                path:'showemployees', // userdefined
                 element:<Employees></Employees>
             },
             {
@@ -47,10 +47,17 @@ import AngularEmployees from './components/AngularEmployees.jsx';
             },
             {
                 path:'addemployee', // userdefined
-                element:<EmployeeForm></EmployeeForm>
-            }
+                element:<EmployeeForm></EmployeeForm> /* empty form */
+            },
+            {
+                path:'updateemployee/:empId', // userdefined
+                element:<EmployeeForm></EmployeeForm> /* form having curent data of employee */
+            },
+
+
         ]
     }
+
    
 ]
 

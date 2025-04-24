@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 function EmployeeCard({employee}){
+  
     return(
     <div className="card mb-3" style={{maxWidth: "540px"}}>
     <div className="row g-0">
@@ -19,6 +21,11 @@ function EmployeeCard({employee}){
                 <li className="list-group-item"><span>working in </span><b>{employee.empDepartment}</b></li>
                 <li className="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
             </ul>
+            <div className="card-body">
+                <Link to={'/updateemployee/'+employee.empId} className="card-link">EDIT</Link>
+                <a href="#" className="card-link">DELETE</a>
+              
+            </div>
         </div>
     </div>
     </div>
