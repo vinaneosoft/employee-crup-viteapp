@@ -6,13 +6,22 @@ import App from './App.jsx'
 import "bootstrap/dist/css/bootstrap.min.css";
 import  "bootstrap/dist/js/bootstrap.bundle.min.js"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Employees from './components/Employees.jsx';
+import AdminLogin from './components/AdminLogin.jsx';
 
 
  let routes=[
     {
         path :'/',
-        element:<App></App>
+        element:<App></App>,
+        children:[
+            {
+                path:'employees', // userdefined
+                element:<Employees></Employees>
+            }
+        ]
     }
+   
 ]
 
  const crudrouter=createBrowserRouter(routes); //Router

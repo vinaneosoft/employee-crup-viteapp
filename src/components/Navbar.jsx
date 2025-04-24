@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 // h4 : JSX, {heading } : javascript intergration in jsx
 function Navbar({mainheading}){
@@ -19,7 +20,8 @@ function Navbar({mainheading}){
               <a className="nav-link" href="#">HOME</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">SHOW EMPLOYEES</a>
+              {/* <a className="nav-link" href="#">SHOW EMPLOYEES</a> */}
+              <Link className="nav-link" to="employees">SHOW EMPLOYEES</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">ADD EMPLOYEE</a>

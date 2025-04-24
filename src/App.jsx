@@ -11,6 +11,8 @@ import { LearningContext } from './model/context';
 import InputDemo from './components/InputDemo';
 import EmployeeForm from './components/EmployeeForm';
 import Hooks from './components/HooksDemo';
+import { Outlet } from 'react-router-dom';
+
 
 /* functional component : UI+development */
  /* logic similar like html : jsx logic javascript extension */
@@ -44,6 +46,7 @@ function App() {
    <>
     {jsxelement}
     <MyHeader></MyHeader>
+    <Outlet></Outlet> {/* for child components */}
     <MyFooter></MyFooter>
    </>
   )

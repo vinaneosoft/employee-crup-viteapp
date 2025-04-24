@@ -13,7 +13,9 @@ function AdminLogin(){
 
         const flag=checkLogin(emailRef.current.value,passwordRef.current.value);
         if(flag)
-            setStatus("success");
+        {
+            // 
+        }
         else
             setStatus("fail")
         /* if(flag)
