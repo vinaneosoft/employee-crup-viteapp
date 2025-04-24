@@ -5,6 +5,7 @@ function EmployeeForm(){
 
     const {empId}=useParams();
     console.log(empId);
+    
     const departments=[
         {
             deptId:'SM',

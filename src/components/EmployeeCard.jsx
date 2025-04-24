@@ -24,7 +24,6 @@ function EmployeeCard({employee}){
             <div className="card-body">
                 <Link to={'/updateemployee/'+employee.empId} className="card-link">EDIT</Link>
                 <a href="#" className="card-link">DELETE</a>
-              
             </div>
         </div>
     </div>
