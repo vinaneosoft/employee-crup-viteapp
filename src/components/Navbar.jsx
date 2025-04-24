@@ -24,10 +24,10 @@ function Navbar({mainheading}){
               <Link className="nav-link" to="employees">SHOW EMPLOYEES</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">ADD EMPLOYEE</a>
+              <Link className="nav-link" to="addemployee">ADD EMPLOYEE</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">ADMIN LOGIN</a>
+              <Link className="nav-link" to="adminlogin">ADMIN LOGIN</Link>
             </li>
           </ul>
         </div>

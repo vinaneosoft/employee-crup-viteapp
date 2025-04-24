@@ -18,7 +18,7 @@ function Dashboard(){
           </ul>
     
           <p className="mb-2">
-            Built using <strong>React</strong>, this dashboard provides a simple and efficient interface
+            Built using <strong><a target="_blank" href="https://react.dev/">React</a></strong>, this dashboard provides a simple and efficient interface
             to perform all basic employee management operations.
           </p>
         </div>

@@ -45,7 +45,7 @@ function App() {
   return (
    <>
     {jsxelement}
-    <MyHeader mainheading={mainheading}></MyHeader>
+    <MyHeader mainheading={mainheading} companyName={companyName}></MyHeader>
     <Outlet></Outlet> {/* for child components */}
     <MyFooter></MyFooter>
    </>

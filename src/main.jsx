@@ -9,6 +9,7 @@ import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom'
 import Employees from './components/Employees.jsx';
 import AdminLogin from './components/AdminLogin.jsx';
 import Dashboard from './components/Dashboard.jsx';
+import EmployeeForm from './components/EmployeeForm.jsx';
 
 
  let routes=[
@@ -27,6 +28,14 @@ import Dashboard from './components/Dashboard.jsx';
             {
                 path:'employees', // userdefined
                 element:<Employees></Employees>
+            },
+            {
+                path:'adminlogin', // userdefined
+                element:<AdminLogin></AdminLogin>
+            },
+            {
+                path:'addemployee', // userdefined
+                element:<EmployeeForm></EmployeeForm>
             }
         ]
     }
