@@ -5,7 +5,9 @@ function EmployeeForm(){
 
     const {empId}=useParams();
     console.log(empId);
-    
+    // how to read the empId from state coming from card
+   // useLocation extract state
+
     const departments=[
         {
             deptId:'SM',

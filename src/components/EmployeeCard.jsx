@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function EmployeeCard({employee}){
+    const navigate=useNavigate();
+
+    function passEmpId(empId){
+        navigate('/updateemployeewithhide/',{ state: { empId } });
+    }
   
     return(
     <div className="card mb-3" style={{maxWidth: "540px"}}>
@@ -24,6 +29,10 @@ function EmployeeCard({employee}){
             <div className="card-body">
                 <Link to={'/updateemployee/'+employee.empId} className="card-link">EDIT</Link>
                 <a href="#" className="card-link">DELETE</a>
+
+
+
+                <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>
             </div>
         </div>
     </div>

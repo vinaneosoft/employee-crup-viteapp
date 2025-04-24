@@ -52,6 +52,10 @@ import AngularEmployees from './components/AngularEmployees.jsx';
             {
                 path:'updateemployee/:empId', // userdefined
                 element:<EmployeeForm></EmployeeForm> /* form having curent data of employee */
+            },
+            {
+                path:'updateemployeewithhide', // userdefined
+                element:<EmployeeForm></EmployeeForm> /* form having curent data of employee */
             }
         ]
     }
