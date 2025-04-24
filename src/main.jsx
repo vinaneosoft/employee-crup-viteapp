@@ -5,9 +5,10 @@ import App from './App.jsx'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import  "bootstrap/dist/js/bootstrap.bundle.min.js"
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom';
 import Employees from './components/Employees.jsx';
 import AdminLogin from './components/AdminLogin.jsx';
+import Dashboard from './components/Dashboard.jsx';
 
 
  let routes=[
@@ -16,8 +17,12 @@ import AdminLogin from './components/AdminLogin.jsx';
         element:<App></App>,
         children:[
             {
+                path:'', 
+                loader:()=>redirect("home")
+            },
+            {
                 path:'home', // userdefined
-                element:put Dashboard component here
+                element:<Dashboard></Dashboard>
             },
             {
                 path:'employees', // userdefined

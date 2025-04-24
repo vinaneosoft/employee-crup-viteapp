@@ -20,7 +20,7 @@ import { Outlet } from 'react-router-dom';
  normal jsx elements : all letter small (similar like html) */
 function App() {
   let [flag,setFlag]=useState(false);
-  const [mainheading, setHeading]= useState("DEVELOPER MANAGEMENT"); // data 1. useState
+  const [mainheading, setHeading]= useState("EMPLOYEE MANAGEMENT"); // data 1. useState
   const companyName="Neosoft";
   const jsxelement=<h1 style={{textAlign:'center', color:'lightgreen'}}>{mainheading}</h1>
   
@@ -45,7 +45,7 @@ function App() {
   return (
    <>
     {jsxelement}
-    <MyHeader></MyHeader>
+    <MyHeader mainheading={mainheading}></MyHeader>
     <Outlet></Outlet> {/* for child components */}
     <MyFooter></MyFooter>
    </>
