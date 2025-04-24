@@ -14,10 +14,10 @@ function EmployeeCard({employee}){
                 <h6>{employee.profile}</h6>
                 <p className="card-text">{employee.empDescription}</p>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><span>joined on </span><b>{employee.joiningDate}</b></li>
-                <li class="list-group-item"><span>working in </span><b>{employee.empDepartment}</b></li>
-                <li class="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item"><span>joined on </span><b>{employee.joiningDate}</b></li>
+                <li className="list-group-item"><span>working in </span><b>{employee.empDepartment}</b></li>
+                <li className="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
             </ul>
         </div>
     </div>

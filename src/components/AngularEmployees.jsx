@@ -6,15 +6,15 @@ function AngularEmployees(){
     const angularEmps=['Mohan','Hairsh','Poonam'];
 
     /* 3. Consume data using hook useContext */
-    const {courseName,courseTuitor,courseDuration}=
-    useContext(LearningContext);
+   /*  const {courseName,courseTuitor,courseDuration}=
+    useContext(LearningContext); */
     return (
       <>
-       <p>
+     {/*   <p>
         <b>{courseName}</b> <br />
         <b>{courseTuitor}</b> <br />
         <b>{courseDuration} hrs</b>
-      </p>
+      </p> */}
       <h5>Angular Employees</h5>
        <ol>
         {angularEmps.map((emp,i)=><li key={i}>{emp}</li>)}

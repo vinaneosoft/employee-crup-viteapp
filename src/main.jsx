@@ -10,6 +10,8 @@ import Employees from './components/Employees.jsx';
 import AdminLogin from './components/AdminLogin.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import EmployeeForm from './components/EmployeeForm.jsx';
+import ReactEmployees from './components/ReactEmployees.jsx';
+import AngularEmployees from './components/AngularEmployees.jsx';
 
 
  let routes=[
@@ -23,7 +25,17 @@ import EmployeeForm from './components/EmployeeForm.jsx';
             },
             {
                 path:'home', // userdefined
-                element:<Dashboard></Dashboard>
+                element:<Dashboard></Dashboard>,
+                children:[
+                    {
+                        path:"reactemployees",
+                        element:<ReactEmployees></ReactEmployees>
+                    },
+                    {
+                        path:"angularemployees",
+                        element:<AngularEmployees></AngularEmployees>
+                    }
+                ]
             },
             {
                 path:'employees', // userdefined
@@ -50,3 +62,4 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={crudrouter}>
     </RouterProvider>
 );
+

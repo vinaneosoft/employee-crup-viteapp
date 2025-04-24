@@ -1,3 +1,4 @@
+import { Link, Outlet } from "react-router-dom";
 
 
 function Dashboard(){
@@ -21,8 +22,22 @@ function Dashboard(){
             Built using <strong><a target="_blank" href="https://react.dev/">React</a></strong>, this dashboard provides a simple and efficient interface
             to perform all basic employee management operations.
           </p>
+          <h4>Employees currently working</h4>
+          <nav>
+            <Link to="reactemployees">REACT EMPLOYEES</Link>
+            <Link to="angularemployees">ANGULAR EMPLOYEES</Link>
+          </nav>
+          <div>
+            <h3>Outlet for Childs of home route</h3>
+            <Outlet></Outlet>
+          </div>
         </div>
+
       );
 }
 
 export default Dashboard;
+/* 
+/home/reactemployees
+/home/angularemployees */
+
