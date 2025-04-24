@@ -16,6 +16,10 @@ import AdminLogin from './components/AdminLogin.jsx';
         element:<App></App>,
         children:[
             {
+                path:'home', // userdefined
+                element:put Dashboard component here
+            },
+            {
                 path:'employees', // userdefined
                 element:<Employees></Employees>
             }
