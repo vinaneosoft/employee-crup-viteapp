@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
 /**Hooks can only be called inside of the body of a function component. */
-function EmployeeCard({employee}){
+function EmployeeCard({employee, deleteEmp}){
 
     const navigate=useNavigate(); // return you function reference
     function passEmpId(empId){
@@ -28,7 +28,7 @@ function EmployeeCard({employee}){
             </ul>
             <div className="card-body">
                 <Link to={'/updateemployee/'+employee.id} className="card-link">EDIT</Link>
-                <a href="#" className="card-link">DELETE</a>
+                <button onClick={()=>deleteEmp(employee.id)}  className="btn btn-link">DELETE</button>
 
         {/*  <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>  */}
             </div>

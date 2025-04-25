@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
-import { getAllEmployees } from "../model/employeecrud";
+import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
 
 function Employees(){
      // manage many employees
@@ -10,14 +10,17 @@ function Employees(){
 
     async function getEmps(){
         const data=await getAllEmployees();
-        console.log(data); // array with emps, [], null
+        //console.log(data); // array with emps, [], null
         if(data.length==0)
            // console.log("NO EMPLOYEES FOUND");
+           {
             setMessage("...........NO EMPLOYEES FOUND.............");
+            setEmployees(data);
+           }
          else if(data=="Not Found"){
-        //console.log(data);
-         setMessage("...........Something went wrong............");
-         //alert("Something went wrong.....");
+            //console.log(data);
+            setMessage("...........Something went wrong............");
+            //alert("Something went wrong.....");
          }
          else   {
             // data contains employees
@@ -26,6 +29,18 @@ function Employees(){
          }            
     
     }
+
+    async function deleteEmp(id){
+           const b=confirm("Do you really want to delete??????");
+            if(b){
+                const data= await deleteEmployeeById(id);
+                alert(`employee with id ${data.id} deleted successfully......`); 
+                getEmps();
+            }
+    }   
+
+
+
     useEffect( ()=>{
         console.log("setup......");
         getEmps();
@@ -33,7 +48,7 @@ function Employees(){
     }, []);
 
     /* react props : parent has employee object to be shared to direct child */
-    const employeeCards= employees.map(employee=><EmployeeCard key={employee.id}  employee={employee} ></EmployeeCard>)
+    const employeeCards= employees.map(employee=><EmployeeCard key={employee.id}  employee={employee} deleteEmp={deleteEmp} ></EmployeeCard>)
     return (
         <>
         <h4>{errorMessage}</h4>
