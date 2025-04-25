@@ -17,7 +17,7 @@ function EmployeeCard({employee}){
         <div className="col-md-8">
             <div className="card-body">
                 <h6 className="card-title text-success"><span>{employee.empName.toUpperCase()}</span>
-                <span>(#{employee.empId})</span></h6>
+                <span>(#{employee.id})</span></h6>
                 <h6>{employee.profile}</h6>
                 <p className="card-text">{employee.empDescription}</p>
             </div>
@@ -27,7 +27,7 @@ function EmployeeCard({employee}){
                 <li className="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
             </ul>
             <div className="card-body">
-                <Link to={'/updateemployee/'+employee.empId} className="card-link">EDIT</Link>
+                <Link to={'/updateemployee/'+employee.id} className="card-link">EDIT</Link>
                 <a href="#" className="card-link">DELETE</a>
 
         {/*  <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>  */}
