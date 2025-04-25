@@ -32,6 +32,7 @@ function Employees(){
 
     async function deleteEmp(id){
            const b=confirm("Do you really want to delete??????");
+           // data, id is wrong, url is wrong
             if(b){
                 const data= await deleteEmployeeById(id);
                 alert(`employee with id ${data.id} deleted successfully......`); 
