@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 function EmployeeForm(){
 
-    const {empId}=useParams();
-    console.log(empId);
+    const {empId}=useParams(); // to extract route parameters
+    console.log(empId);  // we need this id in future to fetch current details of employee to edit
     // how to read the empId from state coming from card
    // useLocation extract state
+
    const location = useLocation(); // give u current location
+   //console.log(location);
    const obj = location.state;
    console.log(obj);
    
