@@ -5,7 +5,7 @@ function EmployeeCard({employee}){
     const navigate=useNavigate();
 
     function passEmpId(empId){
-        navigate('/updateemployeewithhide/',{ state: { empId } });
+        navigate('/updateemployeesecure',{ state: { empId } });
     }
   
     return(
@@ -32,7 +32,7 @@ function EmployeeCard({employee}){
 
 
 
-                <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>
+                {/* <button onClick={()=>passEmpId(employee.empId)}>EDIT</button> */}
             </div>
         </div>
     </div>

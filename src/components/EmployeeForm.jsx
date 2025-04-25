@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { useLocation } from 'react-router-dom';
 function EmployeeForm(){
 
     const {empId}=useParams();
     console.log(empId);
     // how to read the empId from state coming from card
    // useLocation extract state
-
+   const location = useLocation(); // give u current location
+   const obj = location.state;
+   console.log(obj);
+   
     const departments=[
         {
             deptId:'SM',
