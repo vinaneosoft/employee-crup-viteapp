@@ -1,6 +1,6 @@
 import axios  from "axios";
 
-const url="http://localhost:3000/employees";
+const url="http://localhost:3000/employee";
 
 // post, get, put, delete
 
@@ -11,7 +11,7 @@ export  async function getAllEmployees(){
         return response.data;
     }catch(error){
         console.log(error); 
-        return null;
+        return error.response.data;
     }
   
 }
