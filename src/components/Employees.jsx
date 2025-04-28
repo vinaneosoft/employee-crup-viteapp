@@ -26,7 +26,7 @@ function Employees(){
             // data contains employees
             //employees=data;
             setMessage("");
-            setEmployees(data);
+            setEmployees(data); // setter re-render
          }            
     
     }
@@ -37,7 +37,7 @@ function Employees(){
             if(b){
                 const data= await deleteEmployeeById(id);
                 if(data=="Not Found")
-                    alert(`Employee with id ${id} not found`)
+                    alert(`Something went wrong while deleting employee with id ${id}`)
                 else{
                     alert(`employee with id ${data.id} deleted successfully......`); 
                     getEmps();
@@ -46,12 +46,11 @@ function Employees(){
     }   
 
 
-
-    useEffect( ()=>{
+    /* empty depedancy : one time when component mounted first time */
+    useEffect(()=>{
         console.log("setup......");
         getEmps();
-        
-    }, []);
+    },[]);
 
     /* react props : parent has employee object to be shared to direct child */
     const employeeCards= employees.map(employee=><EmployeeCard key={employee.id}  employee={employee} deleteEmp={deleteEmp} ></EmployeeCard>)
