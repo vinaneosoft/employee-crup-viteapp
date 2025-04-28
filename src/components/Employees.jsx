@@ -30,7 +30,6 @@ function Employees(){
          }            
     
     }
-
     async function deleteEmp(id){
            const b=confirm("Do you really want to delete??????");
            // data, id is wrong, url is wrong
@@ -44,7 +43,6 @@ function Employees(){
                 }
             }
     }   
-
 
     /* empty depedancy : one time when component mounted first time */
     useEffect(()=>{

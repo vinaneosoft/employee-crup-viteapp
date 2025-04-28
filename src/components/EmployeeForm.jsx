@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { addEmployee } from "../model/employeecrud";
 function EmployeeForm(){
 
     const {empId}=useParams(); // to extract route parameters
@@ -49,8 +50,11 @@ function EmployeeForm(){
             }
         )
     }
-    function addEmployee(){
+    async function addEmp(){
         console.log(employee)
+        const emp=await addEmployee(employee);
+        console.log(emp);
+        alert(`Employee with id ${emp.id} added successfully... `);
 /* later we will post this employee object to backend to store in json file */
     }
 
@@ -58,7 +62,7 @@ function EmployeeForm(){
         <>
          <h4 className="text-center">EMPLOYEE INPUT FORM</h4>
          <div className="d-flex justify-content-center p-3">
-            <form className="bg-secondary w-50 p-3" onSubmit={addEmployee} >
+            <form className="bg-secondary w-50 p-3" onSubmit={addEmp} >
                 <div className="mb-3">
                     <label className="form-label">NAME</label>
                     <input type="text" id="empName" value={employee.empName} onChange={collectDetails} className="form-control" required/>
