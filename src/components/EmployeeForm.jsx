@@ -10,7 +10,7 @@ function EmployeeForm(){
    // useLocation extract state
 
    const location = useLocation(); // give u current location
-   //console.log(location);
+   console.log(location);
    const obj = location.state;
    console.log(obj);
    
@@ -70,7 +70,7 @@ function EmployeeForm(){
 
     return(
         <>
-         <h4 className="text-center">EMPLOYEE INPUT FORM</h4>
+         <h4 className="text-center">EMPLOYEE {location.pathname.includes("add") ? "INPUT" : "UPDATE"} FORM</h4>
          <div className="d-flex justify-content-center p-3">
             <form className="bg-secondary w-50 p-3" onSubmit={addEmp} >
                 <div className="mb-3">
@@ -107,7 +107,7 @@ function EmployeeForm(){
                     <label  className="form-label">PROFILE PIC LINK</label>
                     <input type="text" id="profilePic" onChange={collectDetails} value={employee.profilePic} className="form-control" required/>
                 </div>
-                <button type="submit" className="mx-3 btn btn-primary">ADD</button>
+                <button type="submit" className="mx-3 btn btn-primary">{location.pathname.includes("add") ? "ADD" : "UPDATE"}</button>
                 <button type="reset" className="btn btn-primary">RESET</button>
             </form>
         </div>
