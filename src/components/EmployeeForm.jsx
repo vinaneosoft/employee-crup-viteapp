@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
-import { addEmployee } from "../model/employeecrud";
+import { addEmployee, updateEmployee } from "../model/employeecrud";
 function EmployeeForm(){
     const location = useLocation(); // give u current location
     const departments=[
@@ -37,7 +37,7 @@ function EmployeeForm(){
         else
             return emp
     }
-    
+
     let [employee, setEmployee]=useState(()=>getInitialState());
     const {empId}=useParams(); // to extract route parameters
     console.log(empId);  // we need this id in future to fetch current details of employee to edit
@@ -78,14 +78,22 @@ function EmployeeForm(){
         }
 
     }
-
-  
+    async function updateEmp(event){
+        event.preventDefault();
+        console.log(employee); // updated details to pass to backend
+         const emp=await updateEmployee(employee);
+        if(emp=="Not Found")
+            alert("something went wrong while updating...")
+        else{
+        //  console.log(emp);
+            alert(`Employee with id ${emp.id} updated successfully... `);
+            navigate('/showemployees');
+        } 
+    }
     
     /* alternate option to load data on mouting of component
     is routing loader function */
-   /*  async function updateEmployee(empId){
-        //crud
-    }
+   /* 
     useEffect(()=>{
         updateEmp(empId);
     }, []); */
@@ -93,7 +101,7 @@ function EmployeeForm(){
         <>
          <h4 className="text-center">EMPLOYEE {location.pathname.includes("add") ? "INPUT" : "UPDATE"} FORM</h4>
          <div className="d-flex justify-content-center p-3">
-            <form className="bg-secondary w-50 p-3" onSubmit={addEmp} >
+            <form className="bg-secondary w-50 p-3" onSubmit={location.pathname.includes("add") ? addEmp : updateEmp} >
                 <div className="mb-3">
                     <label className="form-label">NAME</label>
                     <input type="text" id="empName" value={employee.empName} onChange={collectDetails} className="form-control" required/>

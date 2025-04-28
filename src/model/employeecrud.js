@@ -45,3 +45,14 @@ export async function getEmployeeById(id){
         return error.response.data;
     }
 }
+
+
+export async function updateEmployee(employee){
+    try{
+        const response=await axios.put(url+"/"+employee.id,employee); //secure method
+        return response.data; // object which updated in json file
+    }catch(error){
+        console.log(error); 
+        return error.response.data;
+    }
+}
