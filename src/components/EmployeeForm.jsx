@@ -11,14 +11,15 @@ function EmployeeForm(){
    // useLocation extract state
 
    const location = useLocation(); // give u current location
-   console.log(location);
+   //console.log(location);
+   
    const stateobj = location.state;
-   console.log(stateobj.employee);
+   console.log(stateobj); // no need to fetch the employee from backend
    
 
    const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects
 
-   const data=useLoaderData();
+   const data=useLoaderData(); // load the data from backend when we are using route params
    console.log(data);
 
     const departments=[
