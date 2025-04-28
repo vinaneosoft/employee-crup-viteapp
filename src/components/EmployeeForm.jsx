@@ -12,8 +12,8 @@ function EmployeeForm(){
 
    const location = useLocation(); // give u current location
    console.log(location);
-   const obj = location.state;
-   console.log(obj);
+   const stateobj = location.state;
+   console.log(stateobj.employee);
    
 
    const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects

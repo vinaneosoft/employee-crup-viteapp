@@ -48,7 +48,7 @@ import { getEmployeeById } from './model/employeecrud.js';
             },
             {
                 path:'addemployee', // userdefined // add, addemp, addemployee, crudaddemployee
-                element:<EmployeeForm></EmployeeForm> /* empty form */
+                element:<EmployeeForm></EmployeeForm> /* empty form */,
             },
             {
                 path:'updateemployee/:empId', // userdefined
@@ -66,6 +66,7 @@ import { getEmployeeById } from './model/employeecrud.js';
 
    
 ]
+
 
  const crudrouter=createBrowserRouter(routes); //Router
 

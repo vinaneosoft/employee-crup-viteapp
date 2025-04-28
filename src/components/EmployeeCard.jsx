@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 function EmployeeCard({employee, deleteEmp}){
 
     const navigate=useNavigate(); // return you function reference
-    function passEmpId(empId){
-        navigate('/updateemployeesecure',{ state: { empId } }); // to navigate to defined route
+    function passEmp(employee){
+        navigate('/updateemployeesecure',{ state: { employee } }); // to navigate to defined route
     }
   
     return(
@@ -30,7 +30,7 @@ function EmployeeCard({employee, deleteEmp}){
                 <Link to={'/updateemployee/'+employee.id} className="card-link">EDIT</Link>
                 <button onClick={()=>deleteEmp(employee.id)}  className="btn btn-link">DELETE</button>
 
-        {/*  <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>  */}
+        {  <button onClick={()=>passEmp(employee)}>EDIT</button>  }
             </div>
         </div>
     </div>
