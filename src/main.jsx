@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard.jsx';
 import EmployeeForm from './components/EmployeeForm.jsx';
 import ReactEmployees from './components/ReactEmployees.jsx';
 import AngularEmployees from './components/AngularEmployees.jsx';
+import { getEmployeeById } from './model/employeecrud.js';
 
 
  let routes=[
@@ -51,7 +52,10 @@ import AngularEmployees from './components/AngularEmployees.jsx';
             },
             {
                 path:'updateemployee/:empId', // userdefined
-                element:<EmployeeForm></EmployeeForm> /* form having curent data of employee */
+                element:<EmployeeForm></EmployeeForm>, /* form having curent data of employee */
+                loader:({params})=> {
+                    return getEmployeeById(params.empId)
+                }
             },
             {
                 path:'updateemployeesecure', // userdefined

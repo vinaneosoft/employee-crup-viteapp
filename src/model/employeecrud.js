@@ -36,3 +36,12 @@ export async function addEmployee(employee){
         return error.response.data;
     }
 }
+export async function getEmployeeById(id){
+    try{
+        const response=await axios.get(url+"/"+id); 
+        return response.data; // extisting object
+    }catch(error){
+        console.log(error); 
+        return error.response.data;
+    }
+}

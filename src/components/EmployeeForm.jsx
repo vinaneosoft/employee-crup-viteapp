@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { addEmployee } from "../model/employeecrud";
 function EmployeeForm(){
+
 
     const {empId}=useParams(); // to extract route parameters
     console.log(empId);  // we need this id in future to fetch current details of employee to edit
@@ -17,6 +18,8 @@ function EmployeeForm(){
 
    const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects
 
+   const data=useLoaderData();
+   console.log(data);
 
     const departments=[
         {
@@ -68,6 +71,16 @@ function EmployeeForm(){
 
     }
 
+  
+    
+    /* alternate option to load data on mouting of component
+    is routing loader function */
+   /*  async function updateEmployee(empId){
+        //crud
+    }
+    useEffect(()=>{
+        updateEmp(empId);
+    }, []); */
     return(
         <>
          <h4 className="text-center">EMPLOYEE {location.pathname.includes("add") ? "INPUT" : "UPDATE"} FORM</h4>
