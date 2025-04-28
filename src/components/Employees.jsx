@@ -25,6 +25,7 @@ function Employees(){
          else   {
             // data contains employees
             //employees=data;
+            setMessage("");
             setEmployees(data);
          }            
     
@@ -35,8 +36,12 @@ function Employees(){
            // data, id is wrong, url is wrong
             if(b){
                 const data= await deleteEmployeeById(id);
-                alert(`employee with id ${data.id} deleted successfully......`); 
-                getEmps();
+                if(data=="Not Found")
+                    alert(`Employee with id ${id} not found`)
+                else{
+                    alert(`employee with id ${data.id} deleted successfully......`); 
+                    getEmps();
+                }
             }
     }   
 

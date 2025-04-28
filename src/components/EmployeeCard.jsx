@@ -28,7 +28,7 @@ function EmployeeCard({employee, deleteEmp}){
             </ul>
             <div className="card-body">
                 <Link to={'/updateemployee/'+employee.id} className="card-link">EDIT</Link>
-                <button onClick={()=>deleteEmp(employee.id)}  className="btn btn-link">DELETE</button>
+                <button onClick={()=>deleteEmp(777)}  className="btn btn-link">DELETE</button>
 
         {/*  <button onClick={()=>passEmpId(employee.empId)}>EDIT</button>  */}
             </div>

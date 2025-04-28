@@ -6,7 +6,7 @@ const url="http://localhost:3000/employees";
 
 export  async function getAllEmployees(){
     try{
-        const response=await axios.get(url);
+        const response=await axios.get(url); // get request
         //console.log(response);
         return response.data;
     }catch(error){
@@ -18,8 +18,7 @@ export  async function getAllEmployees(){
 
 export async function deleteEmployeeById(id){
     try{
-        const response=await axios.delete(url+"/"+id)
-        //console.log(response);
+        const response=await axios.delete(url+"/"+id) // delete request
         return response.data;
     }catch(error){
         console.log(error); 
