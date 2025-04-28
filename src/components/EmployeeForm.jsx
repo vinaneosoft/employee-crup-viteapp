@@ -34,7 +34,7 @@ function EmployeeForm(){
     ]
 
    let [employee, setEmployee]=useState({
-        empId:"", empName:"", profile:"", 
+         empName:"", profile:"", 
         empDescription:"", 
         empDepartment:departments[0].deptId, empExperience:"", joiningDate:"", 
         profilePic:'' 
@@ -50,7 +50,8 @@ function EmployeeForm(){
             }
         )
     }
-    async function addEmp(){
+    async function addEmp(event){
+        event.preventDefault();
         console.log(employee)
         const emp=await addEmployee(employee);
         console.log(emp);
