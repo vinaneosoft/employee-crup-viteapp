@@ -22,7 +22,7 @@ export async function deleteEmployeeById(id){
         return response.data;
     }catch(error){
         console.log(error); 
-        return error.response.data;
+        return error.response.data; //"NOT FOUND"
     }
   
 }
