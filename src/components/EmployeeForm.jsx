@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { addEmployee } from "../model/employeecrud";
 function EmployeeForm(){
@@ -14,6 +14,10 @@ function EmployeeForm(){
    const obj = location.state;
    console.log(obj);
    
+
+   const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects
+
+
     const departments=[
         {
             deptId:'SM',
@@ -52,11 +56,12 @@ function EmployeeForm(){
     }
     async function addEmp(event){
         event.preventDefault();
-        console.log(employee)
+       // console.log(employee)
         const emp=await addEmployee(employee);
-        console.log(emp);
+      //  console.log(emp);
         alert(`Employee with id ${emp.id} added successfully... `);
-/* later we will post this employee object to backend to store in json file */
+        navigate('/showemployees');
+
     }
 
     return(
