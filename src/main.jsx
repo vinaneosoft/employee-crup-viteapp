@@ -46,7 +46,7 @@ import AngularEmployees from './components/AngularEmployees.jsx';
                 element:<AdminLogin></AdminLogin>
             },
             {
-                path:'addemployee', // userdefined
+                path:'addemployee', // userdefined // add, addemp, addemployee, crudaddemployee
                 element:<EmployeeForm></EmployeeForm> /* empty form */
             },
             {
