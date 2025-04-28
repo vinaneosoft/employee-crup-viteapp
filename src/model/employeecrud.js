@@ -32,7 +32,7 @@ export async function addEmployee(employee){
         const response=await axios.post(url,employee); //secure method
         return response.data; // object which added in json file
     }catch(error){
-        console.log(error.response.data); 
+        console.log(error); 
         return error.response.data;
     }
 }

@@ -58,9 +58,13 @@ function EmployeeForm(){
         event.preventDefault();
        // console.log(employee)
         const emp=await addEmployee(employee);
-      //  console.log(emp);
-        alert(`Employee with id ${emp.id} added successfully... `);
-        navigate('/showemployees');
+        if(emp=="Not Found")
+            alert("something went wrong while adding...")
+        else{
+        //  console.log(emp);
+            alert(`Employee with id ${emp.id} added successfully... `);
+            navigate('/showemployees');
+        }
 
     }
 
