@@ -30,7 +30,7 @@ function EmployeeCard({employee, deleteEmp}){
                 <Link to={'/updateemployee/'+employee.id} className="card-link">EDIT</Link>
                 <button onClick={()=>deleteEmp(employee.id)}  className="btn btn-link">DELETE</button>
 
-        {  <button onClick={()=>passEmp(employee)}>EDIT</button>  }
+       {/*  {  <button onClick={()=>passEmp(employee)}>EDIT</button>  } */}
             </div>
         </div>
     </div>

@@ -3,25 +3,7 @@ import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { addEmployee } from "../model/employeecrud";
 function EmployeeForm(){
-
-
-    const {empId}=useParams(); // to extract route parameters
-    console.log(empId);  // we need this id in future to fetch current details of employee to edit
-    // how to read the empId from state coming from card
-   // useLocation extract state
-
-   const location = useLocation(); // give u current location
-   //console.log(location);
-   
-   const stateobj = location.state;
-   console.log(stateobj); // no need to fetch the employee from backend
-   
-
-   const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects
-
-   const data=useLoaderData(); // load the data from backend when we are using route params
-   console.log(data);
-
+    const location = useLocation(); // give u current location
     const departments=[
         {
             deptId:'SM',
@@ -41,12 +23,37 @@ function EmployeeForm(){
         }
     ]
 
-   let [employee, setEmployee]=useState({
-         empName:"", profile:"", 
-        empDescription:"", 
-        empDepartment:departments[0].deptId, empExperience:"", joiningDate:"", 
-        profilePic:'' 
-    });
+    const emp=useLoaderData(); // load the data from backend when we are using route params
+    
+    function getInitialState(){
+        if(location.pathname.includes("add")){
+            return {
+                empName:"", profile:"", 
+               empDescription:"", 
+               empDepartment:departments[0].deptId, empExperience:"", joiningDate:"", 
+               profilePic:'' 
+           }
+        }
+        else
+            return emp
+    }
+    
+    let [employee, setEmployee]=useState(()=>getInitialState());
+    const {empId}=useParams(); // to extract route parameters
+    console.log(empId);  // we need this id in future to fetch current details of employee to edit
+    // how to read the empId from state coming from card
+   // useLocation extract state
+ 
+   //console.log(location);
+  /*  const stateobj = location.state;
+   console.log(stateobj); */ // no need to fetch the employee from backend
+
+   const navigate=useNavigate(); //returns function that lets you navigate programmatically in the browser in response to user interactions or effects
+  
+   //console.log(data);
+   //setEmployee(emp);
+
+    
 
     function collectDetails(event){
         console.log(event.target.id);
