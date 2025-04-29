@@ -12,6 +12,7 @@ import InputDemo from './components/InputDemo';
 import EmployeeForm from './components/EmployeeForm';
 import Hooks from './components/HooksDemo';
 import { Outlet } from 'react-router-dom';
+import ImageInsert from './components/ImageInsert';
 
 
 /* functional component : UI+development */
@@ -47,6 +48,7 @@ function App() {
     {jsxelement}
     <MyHeader mainheading={mainheading} companyName={companyName}></MyHeader>
     <Outlet></Outlet> {/* for child components */}
+    <ImageInsert></ImageInsert>
     <MyFooter></MyFooter>
    </>
   )
