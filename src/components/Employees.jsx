@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
-import { MenuItem, Select, TextField } from "@mui/material";
+import { MenuItem, Select, TextField, Typography } from "@mui/material";
 
 function Employees(){
      // manage many employees
@@ -71,7 +71,8 @@ function Employees(){
     return (
         <>
         <div className="bg-danger p-2">
-            <label>Search Employee on the basis of </label>
+            <label>Search Employee on the basis of</label>
+           
             <Select value={searchKey} onChange={(e)=>setKey(e.target.value)}>
                 <MenuItem value="empDepartment">DEPT CODE</MenuItem>
                 <MenuItem value="empExperience">Experience</MenuItem>
