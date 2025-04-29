@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { checkLogin } from "../model/AdminLogin";
+import  Button  from "@mui/material/Button";
 
 
 function AdminLogin(){
@@ -41,8 +42,8 @@ function AdminLogin(){
                     <label htmlFor="passwordRef" className="form-label">Password</label>
                     <input type="password" ref={passwordRef} className="form-control" />
                 </div>
-                <button type="submit" className="mx-3 btn btn-primary">LOGIN</button>
-                <button type="reset" className="btn btn-primary">RESET</button>
+                <Button type="submit" variant="contained" color="success" className="m-2" >LOGIN</Button>
+                <Button type="reset" variant="contained" color="success" className="m-2">RESET</Button>
             </form>
         </div>
         </>
@@ -51,3 +52,5 @@ function AdminLogin(){
 }
 
 export default AdminLogin;
+
+

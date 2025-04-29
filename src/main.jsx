@@ -14,6 +14,10 @@ import ReactEmployees from './components/ReactEmployees.jsx';
 import AngularEmployees from './components/AngularEmployees.jsx';
 import { getEmployeeById } from './model/employeecrud.js';
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
  let routes=[
     {
