@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
 
@@ -8,6 +8,8 @@ function Employees(){
     let [employees, setEmployees]=useState([]);
     let [errorMessage, setMessage]=useState("");
 
+    let searchQuery=useRef();
+    let [searchKey, setKey]=useState("id");
     async function getEmps(){
         const data=await getAllEmployees();
         //console.log(data); // array with emps, [], null
@@ -43,7 +45,12 @@ function Employees(){
                 }
             }
     }   
-
+function searchEmployee(){
+    // on which basis u want to search : serachKey
+    // what u want to compare : searchQuery
+    console.log(searchKey);
+    console.log(searchQuery.current.value);  
+}
     /* empty depedancy : one time when component mounted first time */
     useEffect(()=>{
         console.log("setup......");
@@ -54,6 +61,15 @@ function Employees(){
     const employeeCards= employees.map(employee=><EmployeeCard key={employee.id}  employee={employee} deleteEmp={deleteEmp} ></EmployeeCard>)
     return (
         <>
+        <div>
+            <label>Searech Employee on the basis of </label>
+            <select value={searchKey} onChange={(e)=>setKey(e.target.value)}>
+                <option value="id">ID</option>
+                <option value="empName">NAME</option>
+                <option value="empDepartment">DEPT CODE</option>
+            </select>
+            <input type="text" ref={searchQuery} onKeyUp={searchEmployee}></input>
+        </div>
         <h4>{errorMessage}</h4>
         <article className="d-flex flex-wrap justify-content-evenly">
             {employeeCards}

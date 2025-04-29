@@ -46,7 +46,6 @@ export async function getEmployeeById(id){
     }
 }
 
-
 export async function updateEmployee(employee){
     try{
         const response=await axios.put(url+"/"+employee.id,employee); //secure method
