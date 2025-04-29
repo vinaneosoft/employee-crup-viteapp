@@ -7,7 +7,7 @@ function Employees(){
      // currently we create fake employees array
     let [employees, setEmployees]=useState([]);
     let [errorMessage, setMessage]=useState("");
-
+    let originalEmployees=useRef([]);
     let searchQuery=useRef();
     let [searchKey, setKey]=useState("id");
     async function getEmps(){
@@ -18,6 +18,7 @@ function Employees(){
            {
             setMessage("...........NO EMPLOYEES FOUND.............");
             setEmployees(data);
+           originalEmployees.current=data;
            }
          else if(data=="Not Found"){
             //console.log(data);
@@ -29,6 +30,7 @@ function Employees(){
             //employees=data;
             setMessage("");
             setEmployees(data); // setter re-render
+            originalEmployees.current=data;
          }            
     
     }
@@ -45,12 +47,18 @@ function Employees(){
                 }
             }
     }   
-function searchEmployee(){
-    // on which basis u want to search : serachKey
-    // what u want to compare : searchQuery
-    console.log(searchKey);
-    console.log(searchQuery.current.value);  
-}
+    function searchEmployee(){
+        // on which basis u want to search : serachKey
+        // what u want to compare : searchQuery
+       // console.log(searchKey);
+       // console.log(searchQuery.current.value);  
+        // filter
+        const filteredEmployees=originalEmployees.current.filter((employee)=>
+            employee[searchKey].toLowerCase().includes(searchQuery.current.value.toLowerCase())
+        );
+        setEmployees(filteredEmployees); // its changing original array
+        // we are not able to recover our original array so we used useRef originalEmployees
+    }
     /* empty depedancy : one time when component mounted first time */
     useEffect(()=>{
         console.log("setup......");
@@ -61,14 +69,14 @@ function searchEmployee(){
     const employeeCards= employees.map(employee=><EmployeeCard key={employee.id}  employee={employee} deleteEmp={deleteEmp} ></EmployeeCard>)
     return (
         <>
-        <div>
-            <label>Searech Employee on the basis of </label>
-            <select value={searchKey} onChange={(e)=>setKey(e.target.value)}>
+        <div className="bg-danger p-2">
+            <label>Search Employee on the basis of </label>
+            <select className="input-control" value={searchKey} onChange={(e)=>setKey(e.target.value)}>
                 <option value="id">ID</option>
                 <option value="empName">NAME</option>
                 <option value="empDepartment">DEPT CODE</option>
             </select>
-            <input type="text" ref={searchQuery} onKeyUp={searchEmployee}></input>
+            <input className="input-control" type="text" ref={searchQuery} onKeyUp={searchEmployee}></input>
         </div>
         <h4>{errorMessage}</h4>
         <article className="d-flex flex-wrap justify-content-evenly">

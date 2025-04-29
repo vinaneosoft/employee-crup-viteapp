@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:vite\" \"npm run dev:json\"",
     "dev:vite": "vite",
-    "dev:json": "json-server employeesinfo.json",
+    "dev:json": "json-server JSONDATA/employeesinfo.json",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+
   },
   "dependencies": {
     "axios": "^1.9.0",

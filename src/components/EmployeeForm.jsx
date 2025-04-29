@@ -20,6 +20,10 @@ function EmployeeForm(){
         {
             deptId:'DN',
             deptName:'Dot Net'
+        },
+        {
+            deptId:'PHP',
+            deptName:'PHP'
         }
     ]
 
