@@ -72,9 +72,12 @@ function Employees(){
         <div className="bg-danger p-2">
             <label>Search Employee on the basis of </label>
             <select className="input-control" value={searchKey} onChange={(e)=>setKey(e.target.value)}>
-                <option value="id">ID</option>
-                <option value="empName">NAME</option>
                 <option value="empDepartment">DEPT CODE</option>
+                <option value="empExperience">Experience</option>
+                <option value="id">ID</option>
+                <option value="joiningDate">joining date</option>
+                <option value="empName">NAME</option>
+                <option value="profile">Profile</option>
             </select>
             <input className="input-control" type="text" ref={searchQuery} onKeyUp={searchEmployee}></input>
         </div>
