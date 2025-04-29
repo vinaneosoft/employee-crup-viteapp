@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
-import { TextField } from "@mui/material";
+import { MenuItem, Select, TextField } from "@mui/material";
 
 function Employees(){
      // manage many employees
@@ -72,14 +72,14 @@ function Employees(){
         <>
         <div className="bg-danger p-2">
             <label>Search Employee on the basis of </label>
-            <select className="input-control" value={searchKey} onChange={(e)=>setKey(e.target.value)}>
-                <option value="empDepartment">DEPT CODE</option>
-                <option value="empExperience">Experience</option>
-                <option value="id">ID</option>
-                <option value="joiningDate">joining date</option>
-                <option value="empName">NAME</option>
-                <option value="profile">Profile</option>
-            </select>
+            <Select value={searchKey} onChange={(e)=>setKey(e.target.value)}>
+                <MenuItem value="empDepartment">DEPT CODE</MenuItem>
+                <MenuItem value="empExperience">Experience</MenuItem>
+                <MenuItem value="id">ID</MenuItem>
+                <MenuItem value="joiningDate">joining date</MenuItem>
+                <MenuItem value="empName">NAME</MenuItem>
+                <MenuItem value="profile">Profile</MenuItem>
+            </Select>
           {/*  use inputRef attribute instead of ref  for below MUI component */}
             <TextField variant="standard"  inputRef={searchQuery} onKeyUp={searchEmployee}></TextField>
 
