@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
+import { TextField } from "@mui/material";
 
 function Employees(){
      // manage many employees
@@ -79,7 +80,9 @@ function Employees(){
                 <option value="empName">NAME</option>
                 <option value="profile">Profile</option>
             </select>
-            <input className="input-control" type="text" ref={searchQuery} onKeyUp={searchEmployee}></input>
+          {/*  use inputRef attribute instead of ref  for below MUI component */}
+            <TextField variant="standard"  inputRef={searchQuery} onKeyUp={searchEmployee}></TextField>
+
         </div>
         <h4>{errorMessage}</h4>
         <article className="d-flex flex-wrap justify-content-evenly">
