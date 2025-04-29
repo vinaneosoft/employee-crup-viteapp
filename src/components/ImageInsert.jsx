@@ -16,6 +16,8 @@ function ImageInsert(){
             <img height="200" width="400" src={sunsetLocal} alt="sunset"></img>
             <h4>image imported from local path (will work)</h4>
             <img height="200" width="400" src={sunsetImage} alt="sunset"></img>
+            <h4>require images (to be solved)</h4>
+           {/*  <img src={require("../assets/sunset.jpg")}></img> */}
         </section>
     );
 }
