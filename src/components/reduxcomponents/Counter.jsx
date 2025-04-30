@@ -7,9 +7,8 @@ function Counter(){
 
     return(
      <>
-        <h3 className="text-center">Parent component</h3>
+        <h3 className="text-center">Redux Store</h3>
         <div className="d-flex justify-content-center">
-           
             <div className="border border-4 p-5">
                 <IncrementCounter></IncrementCounter>
             </div>
