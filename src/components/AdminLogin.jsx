@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { checkLogin } from "../model/AdminLogin";
 import  Button  from "@mui/material/Button";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 function AdminLogin(){
@@ -10,20 +10,17 @@ function AdminLogin(){
     let passwordRef=useRef();
     let navigate=useNavigate();
     const [loginStatus, setStatus]=useState("");
-
     const[cookie, setCookie, removeCookie]=useCookies();
-
     function collectDetails(event){
         event.preventDefault();
         console.log(emailRef.current.value);
         console.log(passwordRef.current.value);
-
         const flag=checkLogin(emailRef.current.value,passwordRef.current.value);
         if(flag){
             setCookie("neoadmin", emailRef.current.value);
             setStatus("");
             alert("you are logged in successfully....");
-            navigate("/home"); //
+            navigate(-1); 
         }
         else {
             setStatus("incorrect username or password");
