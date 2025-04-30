@@ -6,18 +6,23 @@ import { useNavigate } from "react-router-dom";
 function AuthGuard({children}){
     const navigate=useNavigate();
     const [cookie, setCookie, removeCookie]=useCookies();
-    console.log(cookie);
+    console.log(cookie); 
 
+    // how to test for empty object {}
     useEffect(()=>{
-        if(cookie){
+      
+       if(Object.keys(cookie).length==0){
             alert("Please login first.....");
             navigate("/adminlogin"); 
-        }
-        else{
-            return children;
-        }
-    });
+       }
+        
+    },[]);
     
+    return (
+        <div>
+            {Object.keys(cookie).length!=0 && children}
+        </div>
+    );
    
 }
 

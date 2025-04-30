@@ -1,24 +1,33 @@
 import { useRef, useState } from "react";
 import { checkLogin } from "../model/AdminLogin";
 import  Button  from "@mui/material/Button";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 
 function AdminLogin(){
     let emailRef=useRef();
     let passwordRef=useRef();
-    const [loginStatus, setStatus]=useState("fail");
+    let navigate=useNavigate();
+    const [loginStatus, setStatus]=useState("");
+
+    const[cookie, setCookie, removeCookie]=useCookies();
+
     function collectDetails(event){
         event.preventDefault();
         console.log(emailRef.current.value);
         console.log(passwordRef.current.value);
 
         const flag=checkLogin(emailRef.current.value,passwordRef.current.value);
-        if(flag)
-        {
-            // we will set the cookie with the name "neoadmin"
+        if(flag){
+            setCookie("neoadmin", emailRef.current.value);
+            alert("you are logged in successfully....");
+            navigate("/home"); //
         }
-        else
-            setStatus("fail")
+        else {
+            setStatus("incorrect username or password");
+        }
+            
         /* if(flag)
              navigate to dashboard
         else
@@ -28,12 +37,11 @@ function AdminLogin(){
     return(
         <>
          <h4 className="text-center">ADMIN LOGIN FORM</h4>
-         <p>
-         <b>{loginStatus}</b>
-         </p>
          <div className="d-flex justify-content-center p-2">
+            <p>
+                <b>{loginStatus}</b>
+            </p>
             <form className="bg-secondary w-50 p-3" onSubmit={collectDetails}>
-           
                 <div className="mb-3">
                     <label htmlFor="emailRef" className="form-label">Email address</label>
                     <input type="email" ref={emailRef} className="form-control"/>
