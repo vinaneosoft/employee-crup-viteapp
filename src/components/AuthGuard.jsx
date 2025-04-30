@@ -11,7 +11,7 @@ function AuthGuard({children}){
     // how to test for empty object {}
     useEffect(()=>{
       
-       if(Object.keys(cookie).length==0){
+       if(!('neoadmin' in cookie)){
             alert("Please login first.....");
             navigate("/adminlogin"); 
        }
@@ -20,7 +20,7 @@ function AuthGuard({children}){
     
     return (
         <div>
-            {Object.keys(cookie).length!=0 && children}
+            {'neoadmin' in cookie && children}
         </div>
     );
    
