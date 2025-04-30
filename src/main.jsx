@@ -18,6 +18,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import AuthGuard from './components/AuthGuard.jsx';
 
  let routes=[
     {
@@ -52,7 +53,10 @@ import '@fontsource/roboto/700.css';
             },
             {
                 path:'addemployee', // userdefined // add, addemp, addemployee, crudaddemployee
-                element:<EmployeeForm></EmployeeForm> /* empty form */,
+                element:
+                <AuthGuard>
+                     <EmployeeForm></EmployeeForm> 
+                </AuthGuard>   
             },
             {
                 path:'updateemployee/:empId', // userdefined
