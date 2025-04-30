@@ -61,7 +61,11 @@ import { CookiesProvider } from 'react-cookie';
             },
             {
                 path:'updateemployee/:empId', // userdefined
-                element:<EmployeeForm></EmployeeForm>, /* form having curent data of employee */
+                element:
+                <AuthGuard>
+                    <EmployeeForm></EmployeeForm>
+                </AuthGuard>
+                , /* form having curent data of employee */
                 loader:({params})=> {
                     return getEmployeeById(params.empId)
                 }

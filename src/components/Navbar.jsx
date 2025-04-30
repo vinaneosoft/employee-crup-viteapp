@@ -38,7 +38,7 @@ function Navbar({mainheading}){
             <li className="nav-item">
               {
                 ('neoadmin' in cookie) ?
-                <Button onClick={logout}>LOGOUT </Button>
+                <Button onClick={logout}>LOGOUT</Button>
                 : 
                 <Link className="nav-link" to="adminlogin">ADMIN LOGIN</Link>
               }

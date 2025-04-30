@@ -2,8 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
+import { useCookies } from "react-cookie";
 /**Hooks can only be called inside of the body of a function component. */
 function EmployeeCard({employee, deleteEmp}){
+
+   const[cookie] =useCookies();
 
     const navigate=useNavigate(); // return you function reference
     function passEmp(employee){
@@ -28,14 +31,22 @@ function EmployeeCard({employee, deleteEmp}){
                 <li className="list-group-item"><span>working in </span><b>{employee.empDepartment}</b></li>
                 <li className="list-group-item"><span>total </span><b>{employee.empExperience}</b><span> years of experience</span></li>
             </ul>
-            <div className="card-body">
+            {
+                'neoadmin' in cookie ?
+                <div className="card-body"> 
                 <Button  color="secondary" className="mx-2" variant="contained" to={'/updateemployee/'+employee.id}
                 component={Link}
                 startIcon={<EditIcon></EditIcon>} >EDIT</Button>
                 <Button onClick={()=>deleteEmp(employee.id)} color="error" 
                 variant="contained" startIcon={<DeleteIcon></DeleteIcon>}>DELETE</Button>
-       {/*  {  <button onClick={()=>passEmp(employee)}>EDIT</button>  } */}
-            </div>
+                {/*  <button onClick={()=>passEmp(employee)}>EDIT</button>  */} 
+                </div>
+                :
+                <div className="card-body">
+                    <p className="text-info"><small>Please login to update /delete the employee</small></p>
+                </div>
+            }
+           
         </div>
     </div>
     </div>
