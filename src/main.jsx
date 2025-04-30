@@ -19,6 +19,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import AuthGuard from './components/AuthGuard.jsx';
+import { CookiesProvider } from 'react-cookie';
 
  let routes=[
     {
@@ -81,7 +82,9 @@ import AuthGuard from './components/AuthGuard.jsx';
 // js - DOM : methods
 // in strictmode components is getting mounted 2 times for resolving issues may occur in first render
 createRoot(document.getElementById('root')).render(
-    <RouterProvider router={crudrouter}>
-    </RouterProvider>
+    <CookiesProvider>
+        <RouterProvider router={crudrouter}>
+        </RouterProvider>
+    </CookiesProvider>
 );
 

@@ -15,7 +15,7 @@ function AdminLogin(){
         const flag=checkLogin(emailRef.current.value,passwordRef.current.value);
         if(flag)
         {
-            // 
+            // we will set the cookie with the name "neoadmin"
         }
         else
             setStatus("fail")
