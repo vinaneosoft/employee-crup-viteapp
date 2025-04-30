@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
+import { useCookies } from "react-cookie";
+import { Link, useNavigate } from "react-router-dom";
 
 // h4 : JSX, {heading } : javascript intergration in jsx
 function Navbar({mainheading}){
   const heading="navbar";
 
+  let [cookie, setCookie, removeCookie]=useCookies();
+  const navigate=useNavigate();
 
+  function logout(){
+    removeCookie('neoadmin');
+    alert("you are logged out....");
+    navigate("/home");
+  }
   
   //logic 
     return(
@@ -27,7 +36,12 @@ function Navbar({mainheading}){
               <Link className="nav-link" to="addemployee">ADD EMPLOYEE</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="adminlogin">ADMIN LOGIN</Link>
+              {
+                ('neoadmin' in cookie) ?
+                <Button onClick={logout}>LOGOUT </Button>
+                : 
+                <Link className="nav-link" to="adminlogin">ADMIN LOGIN</Link>
+              }
             </li>
           </ul>
         </div>

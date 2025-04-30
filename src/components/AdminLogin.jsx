@@ -21,6 +21,7 @@ function AdminLogin(){
         const flag=checkLogin(emailRef.current.value,passwordRef.current.value);
         if(flag){
             setCookie("neoadmin", emailRef.current.value);
+            setStatus("");
             alert("you are logged in successfully....");
             navigate("/home"); //
         }
@@ -37,10 +38,9 @@ function AdminLogin(){
     return(
         <>
          <h4 className="text-center">ADMIN LOGIN FORM</h4>
-         <div className="d-flex justify-content-center p-2">
-            <p>
-                <b>{loginStatus}</b>
-            </p>
+        <h5 className="text-center text-danger"><small>{loginStatus}</small></h5>
+         <div className="d-flex justify-content-center p-2 ">
+          
             <form className="bg-secondary w-50 p-3" onSubmit={collectDetails}>
                 <div className="mb-3">
                     <label htmlFor="emailRef" className="form-label">Email address</label>
