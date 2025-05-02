@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { resetAction } from "../couterstore/counterSlice";
-import { Button } from "@mui/material";
+import { Button, useScrollTrigger } from "@mui/material";
 function Dashboard(){
  const dispatch= useDispatch();
+ const count=useSelector((state)=>state.counter.value)
     return (
         <div className="p-6 max-w-3xl mx-auto  rounded shadow">
           <h1 className="text-3xl font-bold mb-4">👨‍💼 Employee CRUD Dashboard</h1>
@@ -35,6 +36,7 @@ function Dashboard(){
           </div>
           <div>
             <h5>reset store counter</h5>
+            <p>{count}</p>
             <Button onClick={()=>dispatch(resetAction())} variant="contained">RESET </Button>          </div>
         </div>
 

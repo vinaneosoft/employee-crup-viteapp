@@ -8,8 +8,8 @@ function IncrementCounter(){
     return(
          <>
          <p>
-            <label>Counter is : </label>
-            <b>{count}</b>
+            <label>Counter is  </label>
+            <b> {count}</b>
          </p>
         <p>dispatching increment action on store</p>
         <Button onClick={()=>dispatch(incrementAction())} variant="contained">INCREMENT</Button>
