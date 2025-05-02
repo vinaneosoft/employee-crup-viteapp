@@ -1,20 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { getAllEmployees } from "../model/employeecrud";
+
+
+/* pending */
+/* const fetchLength=createAsyncThunk(
+    'data/fetchInitialData', 
+    async ()=>{
+         const employees=await getAllEmployees();
+         return employees.length;
+    }
+); */
 
 
 const employeesSlice=createSlice({
     name:'employeescount',
     initialState:{
-        value:0
+        value: 0
     },
+    
     reducers:{
-        incrementCount:(state)=>{
-            state.value=state.value+1; // mutable logic allowed using toolkit
+        loadCount:(state, action)=>{
+           // console.log(action.payload);
+            state.value=action.payload;
         },
-        decrementCount:(state)=>{
-            state.value=state.value-1; 
-        }
     }
 });
 
-export const {incrementCount,decrementCount}=employeesSlice.actions;
+export const {incrementCount,decrementCount, loadCount}=employeesSlice.actions;
 export const employeesReducer=employeesSlice.reducer;

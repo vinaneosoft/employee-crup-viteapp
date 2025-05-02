@@ -2,17 +2,23 @@ import { useEffect, useRef, useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 import { getAllEmployees, deleteEmployeeById } from "../model/employeecrud";
 import { MenuItem, Select, TextField, Typography } from "@mui/material";
-
+import { useDispatch, useSelector } from "react-redux";
+import { loadCount } from "../employeesstore/employeesSlice";
 function Employees(){
      // manage many employees
      // currently we create fake employees array
     let [employees, setEmployees]=useState([]);
     let [errorMessage, setMessage]=useState("");
+    const dispatch=useDispatch();
+    const empcount=useSelector((state)=>state.empcounter.value);
+    //console.log(empcount);
+    
     let originalEmployees=useRef([]);
     let searchQuery=useRef();
     let [searchKey, setKey]=useState("id");
     async function getEmps(){
         const data=await getAllEmployees();
+        
         //console.log(data); // array with emps, [], null
         if(data.length==0)
            // console.log("NO EMPLOYEES FOUND");
@@ -20,6 +26,7 @@ function Employees(){
             setMessage("...........NO EMPLOYEES FOUND.............");
             setEmployees(data);
            originalEmployees.current=data;
+           dispatch(loadCount(data.length))
            }
          else if(data=="Not Found"){
             //console.log(data);
@@ -32,6 +39,7 @@ function Employees(){
             setMessage("");
             setEmployees(data); // setter re-render
             originalEmployees.current=data;
+            dispatch(loadCount(data.length))
          }            
     
     }
@@ -64,6 +72,9 @@ function Employees(){
     useEffect(()=>{
         console.log("setup......");
         getEmps();
+       // console.log(originalEmployees.current.length);
+        
+        
     },[]);
 
     /* react props : parent has employee object to be shared to direct child */
@@ -83,7 +94,10 @@ function Employees(){
             </Select>
           {/*  use inputRef attribute instead of ref  for below MUI component */}
             <TextField variant="standard"  inputRef={searchQuery} onKeyUp={searchEmployee}></TextField>
-
+        </div>
+        <div>
+            <label> number of employees :</label>
+            <b > {empcount}</b>
         </div>
         <h4>{errorMessage}</h4>
         <article className="d-flex flex-wrap justify-content-evenly">
