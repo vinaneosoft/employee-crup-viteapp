@@ -18,8 +18,11 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+
 import AuthGuard from './components/AuthGuard.jsx';
 import { CookiesProvider } from 'react-cookie';
+import { Provider } from 'react-redux';
+import store from './store.js';
 
  let routes=[
     {
@@ -86,9 +89,12 @@ import { CookiesProvider } from 'react-cookie';
 // js - DOM : methods
 // in strictmode components is getting mounted 2 times for resolving issues may occur in first render
 createRoot(document.getElementById('root')).render(
-    <CookiesProvider>
-        <RouterProvider router={crudrouter}>
-        </RouterProvider>
-    </CookiesProvider>
+    <Provider store={store}>
+        <CookiesProvider>
+            <RouterProvider router={crudrouter}>
+            </RouterProvider>
+        </CookiesProvider>
+    </Provider>
 );
 
+//2. store provided in react application for all components
