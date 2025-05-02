@@ -1,7 +1,9 @@
+import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
-
-
+import { resetAction } from "../couterstore/counterSlice";
+import { Button } from "@mui/material";
 function Dashboard(){
+ const dispatch= useDispatch();
     return (
         <div className="p-6 max-w-3xl mx-auto  rounded shadow">
           <h1 className="text-3xl font-bold mb-4">👨‍💼 Employee CRUD Dashboard</h1>
@@ -31,6 +33,9 @@ function Dashboard(){
             <h3>Outlet for Childs of home route</h3>
             <Outlet></Outlet>
           </div>
+          <div>
+            <h5>reset store counter</h5>
+            <Button onClick={()=>dispatch(resetAction())} variant="contained">RESET </Button>          </div>
         </div>
 
       );

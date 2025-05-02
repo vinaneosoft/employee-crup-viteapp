@@ -5,15 +5,18 @@ const counterSlice=createSlice({
         value:0
     },
     reducers:{
-        incrementCounter:(state)=>{
+        incrementAction:(state)=>{
             state.value=state.value+1; // mutable logic allowed using toolkit
         },
-        decrementCounter:(state)=>{
+        decrementAction:(state)=>{
             state.value=state.value-1; 
+        },
+        resetAction:(state)=>{
+            state.value=0;
         }
     }
 });
-export const {incrementCounter,decrementCounter}=counterSlice.actions;
+export const {incrementAction,decrementAction, resetAction}=counterSlice.actions;
 export const counterReducer=counterSlice.reducer;
 //export default counterSlice;
 //3. actions and reducer defined
