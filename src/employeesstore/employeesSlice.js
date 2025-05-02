@@ -26,5 +26,5 @@ const employeesSlice=createSlice({
     }
 });
 
-export const {incrementCount,decrementCount, loadCount}=employeesSlice.actions;
+export const {loadCount}=employeesSlice.actions;
 export const employeesReducer=employeesSlice.reducer;

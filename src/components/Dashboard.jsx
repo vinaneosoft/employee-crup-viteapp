@@ -5,6 +5,7 @@ import { Button, useScrollTrigger } from "@mui/material";
 function Dashboard(){
  const dispatch= useDispatch();
  const count=useSelector((state)=>state.counter.value)
+ const empcount=useSelector((state)=>state.empcounter.value)
     return (
         <div className="p-6 max-w-3xl mx-auto  rounded shadow">
           <h1 className="text-3xl font-bold mb-4">👨‍💼 Employee CRUD Dashboard</h1>
@@ -37,9 +38,14 @@ function Dashboard(){
           <div>
             <h5>reset store counter</h5>
             <p>{count}</p>
-            <Button onClick={()=>dispatch(resetAction())} variant="contained">RESET </Button>          </div>
+            <Button onClick={()=>dispatch(resetAction())} variant="contained">
+              RESET </Button>          
+            </div>
+            <div>
+            <h4>Number of employees</h4>
+            <b>{empcount}</b>
+            </div>
         </div>
-
       );
 }
 
