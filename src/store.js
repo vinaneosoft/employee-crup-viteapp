@@ -1,9 +1,11 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import { counterReducer } from "./couterstore/counterSlice";
+import { employeesReducer } from "./employeesstore/employeesSlice";
 const store=configureStore({
    reducer: {
-      counter:counterReducer // key is user defined, value is reducer imported from slice
+      counter:counterReducer, 
+      empcounter:employeesReducer// key is user defined, value is reducer imported from slice
    }
 });
 

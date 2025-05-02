@@ -21,6 +21,7 @@ function AdminLogin(){
             setStatus("");
             alert("you are logged in successfully....");
             navigate(-1); 
+            // dispatch incrementAction to increment counter
         }
         else {
             setStatus("incorrect username or password");

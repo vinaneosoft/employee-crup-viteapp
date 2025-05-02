@@ -12,6 +12,7 @@ function Navbar({mainheading}){
   function logout(){
     removeCookie('neoadmin');
     alert("you are logged out....");
+    // dispatch decrementAction to decrement counter
     navigate("/home");
   }
   
