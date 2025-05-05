@@ -1,13 +1,13 @@
 {
   "employees": [
     {
-      "id": "1d4a",
-      "empName": "sameera Triveni",
+      "id": "d037",
+      "empName": "rasika ",
       "profile": "Software Engineer",
-      "empDescription": "ccccc",
-      "empDepartment": "SM",
+      "empDescription": "dddd",
+      "empDepartment": "PT",
       "empExperience": "12",
-      "joiningDate": "2025-04-27",
+      "joiningDate": "2025-05-04",
       "profilePic": "https://thumbs.dreamstime.com/z/portrait-confident-indian-businesswoman-posing-office-headshot-portrait-happy-successful-young-indian-female-employee-178920445.jpg"
     },
     {
@@ -16,28 +16,18 @@
       "profile": "Software Engineer",
       "empDescription": "zdgfdg",
       "empDepartment": "SM",
-      "empExperience": "12",
+      "empExperience": "14",
       "joiningDate": "2025-05-14",
       "profilePic": "https://thumbs.dreamstime.com/z/portrait-confident-indian-businesswoman-posing-office-headshot-portrait-happy-successful-young-indian-female-employee-178920445.jpg"
     },
     {
       "id": "9c40",
-      "empName": "rasika ",
+      "empName": "anamika Kumari",
       "profile": "Software Engineer",
       "empDescription": "sada",
       "empDepartment": "SM",
       "empExperience": "12",
       "joiningDate": "2025-04-27",
-      "profilePic": "https://thumbs.dreamstime.com/z/portrait-confident-indian-businesswoman-posing-office-headshot-portrait-happy-successful-young-indian-female-employee-178920445.jpg"
-    },
-    {
-      "id": "d037",
-      "empName": "rasika ",
-      "profile": "Software Engineer",
-      "empDescription": "dddd",
-      "empDepartment": "PT",
-      "empExperience": "12",
-      "joiningDate": "2025-05-04",
       "profilePic": "https://thumbs.dreamstime.com/z/portrait-confident-indian-businesswoman-posing-office-headshot-portrait-happy-successful-young-indian-female-employee-178920445.jpg"
     }
   ]

@@ -3,6 +3,8 @@ import axios  from "axios";
 const url="http://localhost:3000/employees";
 
 // request interceptors
+
+
 axios.interceptors.request.use(
     (request)=>{
         console.log("in request interectpor:", request);
@@ -16,7 +18,12 @@ axios.interceptors.request.use(
 //response interceptors
 axios.interceptors.response.use(
     (response)=>{
-        console.log("in response interectpor:", response);
+    // when response contains array then sort the array on the basis of employee names
+    // and return the updated response
+    if(Array.isArray(response.data)){
+        response.data.sort((emp1, emp2)=>emp1.empName.localeCompare(emp2.empName))
+    }
+    console.log("in response interectpor after sorting array:", response);
         return response;
     },
     (error)=>{
