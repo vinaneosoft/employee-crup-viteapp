@@ -14,6 +14,7 @@ import Hooks from './components/HooksDemo';
 import { Outlet } from 'react-router-dom';
 import ImageInsert from './components/ImageInsert';
 import Counter from './components/reduxcomponents/Counter';
+import ThunkTest from './components/ThunkTest';
 
 
 /* functional component : UI+development */
@@ -49,7 +50,7 @@ function App() {
     {jsxelement}
     <MyHeader mainheading={mainheading} companyName={companyName}></MyHeader>
     <Outlet></Outlet> {/* for child components */}
-    <InputDemo></InputDemo>
+   <ThunkTest></ThunkTest>
     <MyFooter></MyFooter>
    </>
   )

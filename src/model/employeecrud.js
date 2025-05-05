@@ -2,9 +2,9 @@ import axios  from "axios";
 
 const url="http://localhost:3000/employees";
 
+//const api=axios.create(.....)
+//api.interceptors
 // request interceptors
-
-
 axios.interceptors.request.use(
     (request)=>{
         console.log("in request interectpor:", request);

@@ -97,7 +97,7 @@ function Employees(){
         </div>
         <div>
             <label> number of employees :</label>
-            <b > {empcount}</b>
+         <b > {empcount}</b> 
         </div>
         <h4>{errorMessage}</h4>
         <article className="d-flex flex-wrap justify-content-evenly">

@@ -2,12 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAllEmployees } from "../model/employeecrud";
 
 
-/* pending */
- const fetchLength=createAsyncThunk(
-    'data/fetchLength', 
+
+ export const fetchLength=createAsyncThunk(
+    'employeescount/fetchLength', 
     async ()=>{
          const employees=await getAllEmployees();
-         return employees.length;
+         console.log("thunk", employees);
+         return employees;
     }
 ); 
 
@@ -15,9 +16,8 @@ import { getAllEmployees } from "../model/employeecrud";
 const employeesSlice=createSlice({
     name:'employeescount',
     initialState:{
-        value: 0
+            value:0
     },
-    
     reducers:{
         loadCount:(state, action)=>{
            // console.log(action.payload);
@@ -26,18 +26,10 @@ const employeesSlice=createSlice({
     },
     extraReducers: (builder) => {
         builder
-          .addCase(fetchLength.pending, (state) => {
-            state.loading = true;
-            state.error = null;
-        })
           .addCase(fetchLength.fulfilled, (state, action) => {
-            state.loading = false;
-            state.items = action.payload;
+            state.value = action.payload.length;
         })
-          .addCase(fetchLength.rejected, (state, action) => {
-            state.loading = false;
-            state.error = action.error.message;
-        });
+         
     }
 });
 
