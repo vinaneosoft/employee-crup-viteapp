@@ -2,6 +2,29 @@ import axios  from "axios";
 
 const url="http://localhost:3000/employees";
 
+// request interceptors
+axios.interceptors.request.use(
+    (request)=>{
+        console.log("in request interectpor:", request);
+        return request;
+    },
+    (error)=>{
+        console.log("in request interectpor:", error);
+        return Promise.reject(error);
+    }
+);
+//response interceptors
+axios.interceptors.response.use(
+    (response)=>{
+        console.log("in response interectpor:", response);
+        return response;
+    },
+    (error)=>{
+        console.log("in response interectpor:", error);
+        return Promise.reject(error);
+    }
+); 
+
 // post, get, put, delete
 
 export  async function getAllEmployees(){

@@ -49,7 +49,7 @@ function App() {
     {jsxelement}
     <MyHeader mainheading={mainheading} companyName={companyName}></MyHeader>
     <Outlet></Outlet> {/* for child components */}
-   <Counter></Counter>
+    <InputDemo></InputDemo>
     <MyFooter></MyFooter>
    </>
   )
